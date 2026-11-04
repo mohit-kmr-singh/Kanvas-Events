@@ -13,6 +13,8 @@ import EventDetails from './pages/EventDetails';
 import Registration from './pages/Registration';
 import RegistrationSuccess from './pages/RegistrationSuccess';
 import MyRegistrations from './pages/MyRegistrations';
+import About from './pages/About';
+import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import StubPage from './pages/StubPage';
 
@@ -33,8 +35,8 @@ export default function App() {
                     <Route path="/events/:id/register" element={<Registration />} />
                     <Route path="/registration-success" element={<RegistrationSuccess />} />
                     <Route path="/my-registrations" element={<MyRegistrations />} />
-                    <Route path="/about" element={<StubPage title="About Us" />} />
-                    <Route path="/contact" element={<StubPage title="Contact Us" />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/contact" element={<Contact />} />
                     <Route path="/wishlist" element={<StubPage title="Event Wishlist" />} />
                     <Route path="/calendar" element={<StubPage title="Event Calendar" />} />
                     <Route path="/login" element={<StubPage title="Demo Login" />} />
