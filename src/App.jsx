@@ -11,6 +11,8 @@ import Home from './pages/Home';
 import ExploreEvents from './pages/ExploreEvents';
 import EventDetails from './pages/EventDetails';
 import Registration from './pages/Registration';
+import RegistrationSuccess from './pages/RegistrationSuccess';
+import MyRegistrations from './pages/MyRegistrations';
 import NotFound from './pages/NotFound';
 import StubPage from './pages/StubPage';
 
@@ -29,8 +31,8 @@ export default function App() {
                     <Route path="/events" element={<ExploreEvents />} />
                     <Route path="/events/:id" element={<EventDetails />} />
                     <Route path="/events/:id/register" element={<Registration />} />
-                    <Route path="/registration-success" element={<StubPage title="Registration Success" />} />
-                    <Route path="/my-registrations" element={<StubPage title="My Registrations" />} />
+                    <Route path="/registration-success" element={<RegistrationSuccess />} />
+                    <Route path="/my-registrations" element={<MyRegistrations />} />
                     <Route path="/about" element={<StubPage title="About Us" />} />
                     <Route path="/contact" element={<StubPage title="Contact Us" />} />
                     <Route path="/wishlist" element={<StubPage title="Event Wishlist" />} />
