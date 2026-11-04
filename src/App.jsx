@@ -1,11 +1,49 @@
-import './App.css'
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext';
+import { ToastProvider } from './context/ToastContext';
+import { WishlistProvider } from './context/WishlistContext';
+import { AuthProvider } from './context/AuthContext';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import StubPage from './pages/StubPage';
 
-function App() {
+export default function App() {
   return (
-    <>
-      <div className='bg-amber-500 m-3 p-3'>Placeholder</div>
-    </>
-  )
+    <ThemeProvider>
+      <ToastProvider>
+        <WishlistProvider>
+          <AuthProvider>
+            <BrowserRouter>
+              <div className="flex flex-col min-h-screen transition-colors duration-300">
+                <Navbar />
+                <main className="flex-grow">
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/events" element={<StubPage title="Explore Events" />} />
+                    <Route path="/events/:id" element={<StubPage title="Event Details" />} />
+                    <Route path="/events/:id/register" element={<StubPage title="Event Registration" />} />
+                    <Route path="/registration-success" element={<StubPage title="Registration Success" />} />
+                    <Route path="/my-registrations" element={<StubPage title="My Registrations" />} />
+                    <Route path="/about" element={<StubPage title="About Us" />} />
+                    <Route path="/contact" element={<StubPage title="Contact Us" />} />
+                    <Route path="/wishlist" element={<StubPage title="Event Wishlist" />} />
+                    <Route path="/calendar" element={<StubPage title="Event Calendar" />} />
+                    <Route path="/login" element={<StubPage title="Demo Login" />} />
+                    <Route path="/signup" element={<StubPage title="Demo Sign Up" />} />
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </main>
+                <Footer />
+                <ScrollToTop />
+              </div>
+            </BrowserRouter>
+          </AuthProvider>
+        </WishlistProvider>
+      </ToastProvider>
+    </ThemeProvider>
+  );
 }
-
-export default App
