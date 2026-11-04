@@ -8,6 +8,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
+import ExploreEvents from './pages/ExploreEvents';
 import NotFound from './pages/NotFound';
 import StubPage from './pages/StubPage';
 
@@ -23,7 +24,7 @@ export default function App() {
                 <main className="flex-grow">
                   <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/events" element={<StubPage title="Explore Events" />} />
+                    <Route path="/events" element={<ExploreEvents />} />
                     <Route path="/events/:id" element={<StubPage title="Event Details" />} />
                     <Route path="/events/:id/register" element={<StubPage title="Event Registration" />} />
                     <Route path="/registration-success" element={<StubPage title="Registration Success" />} />
