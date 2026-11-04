@@ -199,12 +199,12 @@ export default function Contact() {
             </h2>
 
             {submitted ? (
-              <div className="p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 space-y-3 animate-in fade-in">
-                <div className="flex items-center gap-2 font-bold text-emerald-400 text-base">
+              <div className="p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-900 dark:text-emerald-200 space-y-3 animate-in fade-in">
+                <div className="flex items-center gap-2 font-bold text-emerald-700 dark:text-emerald-400 text-base">
                   <CheckCircle2 className="w-5 h-5" />
                   <span>Message Sent Successfully!</span>
                 </div>
-                <p className="text-xs leading-relaxed text-emerald-200">
+                <p className="text-xs leading-relaxed text-emerald-800 dark:text-emerald-200">
                   Thank you, <strong>{formData.name}</strong>. Your inquiry regarding <em>"{formData.subject}"</em> has been recorded. Our team will review your message promptly.
                 </p>
                 <button
@@ -212,7 +212,7 @@ export default function Contact() {
                     setSubmitted(false);
                     setFormData({ name: '', email: '', subject: '', message: '' });
                   }}
-                  className="mt-2 text-xs font-bold underline hover:text-white"
+                  className="mt-2 text-xs font-bold underline hover:text-black dark:hover:text-white"
                 >
                   Send another inquiry →
                 </button>

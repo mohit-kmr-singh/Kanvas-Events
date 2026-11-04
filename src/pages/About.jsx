@@ -84,8 +84,8 @@ export default function About() {
 
       {/* Mission & Vision Cards */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-purple-900/20 via-purple-900/10 to-transparent dark:bg-[#1a1b24] border border-purple-500/30 shadow-xl space-y-4">
-          <div className="w-12 h-12 rounded-2xl bg-[#8055FF]/20 text-[#8055FF] flex items-center justify-center">
+        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-purple-100/70 via-white to-purple-50/50 dark:from-purple-900/20 dark:via-purple-900/10 dark:to-[#1a1b24] border border-purple-200 dark:border-purple-500/30 shadow-xl space-y-4">
+          <div className="w-12 h-12 rounded-2xl bg-[#8055FF]/10 dark:bg-[#8055FF]/20 text-[#8055FF] flex items-center justify-center">
             <Target className="w-6 h-6" />
           </div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white font-['Outfit']">
@@ -96,8 +96,8 @@ export default function About() {
           </p>
         </div>
 
-        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-indigo-900/20 via-indigo-900/10 to-transparent dark:bg-[#1a1b24] border border-indigo-500/30 shadow-xl space-y-4">
-          <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center">
+        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-indigo-100/70 via-white to-indigo-50/50 dark:from-indigo-900/20 dark:via-indigo-900/10 dark:to-[#1a1b24] border border-indigo-200 dark:border-indigo-500/30 shadow-xl space-y-4">
+          <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
             <Eye className="w-6 h-6" />
           </div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white font-['Outfit']">

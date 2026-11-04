@@ -54,15 +54,15 @@ export default function CountdownTimer({ targetDate, label = 'Starts In', size =
         {units.map((unit, idx) => (
           <div key={unit.label} className="flex items-center">
             <div
-              className={`flex flex-col items-center justify-center rounded-xl font-mono border backdrop-blur-md transition-all shadow-lg ${
+              className={`flex flex-col items-center justify-center rounded-xl font-mono border backdrop-blur-md transition-all shadow-md ${
                 isCompact
-                  ? 'min-w-[50px] py-1.5 px-2 bg-black/40 border-white/10 dark:bg-black/50'
-                  : 'min-w-[64px] sm:min-w-[72px] py-2 sm:py-3 px-2 sm:px-3 bg-white/80 dark:bg-[#20212A]/90 border-slate-200 dark:border-white/10'
+                  ? 'min-w-[50px] py-1.5 px-2 bg-purple-500/10 dark:bg-black/50 border-purple-500/20 dark:border-white/10'
+                  : 'min-w-[64px] sm:min-w-[72px] py-2 sm:py-3 px-2 sm:px-3 bg-white/90 dark:bg-[#20212A]/90 border-slate-200 dark:border-white/10'
               }`}
             >
               <span
-                className={`font-black tracking-tight leading-none text-slate-900 dark:text-[#F4F2EE] ${
-                  isCompact ? 'text-lg sm:text-xl' : 'text-2xl sm:text-3xl text-[#8055FF] dark:text-purple-300'
+                className={`font-black tracking-tight leading-none ${
+                  isCompact ? 'text-lg sm:text-xl text-[#8055FF] dark:text-purple-300' : 'text-2xl sm:text-3xl text-[#8055FF] dark:text-purple-300'
                 }`}
               >
                 {String(unit.value).padStart(2, '0')}

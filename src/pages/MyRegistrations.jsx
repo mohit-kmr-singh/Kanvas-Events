@@ -202,10 +202,10 @@ export default function MyRegistrations() {
       {/* ======================================================== */}
       {selectedTicket && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="relative w-full max-w-2xl max-h-[92vh] overflow-y-auto rounded-3xl bg-[#101116] p-4 sm:p-6 border border-white/20 shadow-2xl">
+          <div className="relative w-full max-w-2xl max-h-[92vh] overflow-y-auto rounded-3xl bg-slate-50 dark:bg-[#101116] p-4 sm:p-6 border border-slate-200 dark:border-white/20 shadow-2xl">
             <button
               onClick={() => setSelectedTicket(null)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors z-20 no-print"
+              className="absolute top-4 right-4 p-2 rounded-full bg-slate-200 dark:bg-white/10 text-slate-700 dark:text-white hover:bg-slate-300 dark:hover:bg-white/20 transition-colors z-20 no-print"
               aria-label="Close ticket view"
             >
               <X className="w-5 h-5" />

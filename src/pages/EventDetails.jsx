@@ -114,20 +114,20 @@ export default function EventDetails() {
           alt={event.title}
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#101116] via-[#101116]/80 to-transparent" />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-slate-900/60 to-black/50 dark:from-[#101116] dark:via-[#101116]/80 dark:to-transparent" />
+        <div className="absolute inset-0 bg-black/20 dark:bg-black/40" />
 
         <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-10">
           {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 text-xs font-semibold text-slate-300 mb-6 flex-wrap">
-            <Link to="/" className="hover:text-white transition-colors">
+          <nav className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-6 flex-wrap">
+            <Link to="/" className="hover:text-[#8055FF] dark:hover:text-white transition-colors">
               Home
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
-            <Link to="/events" className="hover:text-white transition-colors">
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
+            <Link to="/events" className="hover:text-[#8055FF] dark:hover:text-white transition-colors">
               Events
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-500" />
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
             <span className="text-[#8055FF] max-w-[200px] truncate">{event.title}</span>
           </nav>
 
@@ -142,18 +142,18 @@ export default function EventDetails() {
             )}
             <span
               className={`px-3 py-1 rounded-lg text-xs font-bold ${
-                event.price.toLowerCase() === 'free' ? 'bg-emerald-500 text-white' : 'bg-white/20 text-white backdrop-blur-md'
+                event.price.toLowerCase() === 'free' ? 'bg-emerald-500 text-white' : 'bg-black/50 dark:bg-white/20 text-white backdrop-blur-md'
               }`}
             >
               {event.price}
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white font-['Outfit'] max-w-4xl leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white font-['Outfit'] max-w-4xl leading-tight">
             {event.title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-6 text-sm text-slate-300 mt-4">
+          <div className="flex flex-wrap items-center gap-6 text-sm text-slate-700 dark:text-slate-300 mt-4">
             <span className="flex items-center gap-1.5 font-medium">
               <Calendar className="w-4 h-4 text-[#8055FF]" />
               {formattedDate}

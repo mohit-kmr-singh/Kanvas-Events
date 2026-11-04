@@ -178,8 +178,8 @@ export default function Registration() {
 
           {/* Duplicate Registration Warning Banner */}
           {duplicateWarning && (
-            <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs sm:text-sm space-y-2 animate-in fade-in">
-              <div className="flex items-center gap-2 font-bold text-amber-400">
+            <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-900 dark:text-amber-200 text-xs sm:text-sm space-y-2 animate-in fade-in">
+              <div className="flex items-center gap-2 font-bold text-amber-700 dark:text-amber-400">
                 <AlertTriangle className="w-4 h-4" />
                 <span>Existing Registration Detected</span>
               </div>
@@ -189,7 +189,7 @@ export default function Registration() {
               <div className="pt-1">
                 <Link
                   to="/my-registrations"
-                  className="font-bold underline text-amber-300 hover:text-white"
+                  className="font-bold underline text-amber-800 dark:text-amber-300 hover:text-black dark:hover:text-white"
                 >
                   View your confirmed pass in My Registrations →
                 </Link>

@@ -170,8 +170,8 @@ export default function TicketPass({ registration, showActions = true }) {
         </div>
 
         {/* Decorative Notches for Ticket Effect */}
-        <div className="hidden sm:block absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#101116] border-r border-purple-500/40 print:hidden" />
-        <div className="hidden sm:block absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#101116] border-l border-purple-500/40 print:hidden" />
+        <div className="hidden sm:block absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-50 dark:bg-[#101116] border-r border-purple-500/40 print:hidden" />
+        <div className="hidden sm:block absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-50 dark:bg-[#101116] border-l border-purple-500/40 print:hidden" />
       </div>
 
       {/* Action Buttons: Print / Download */}

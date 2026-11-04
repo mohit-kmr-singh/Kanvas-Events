@@ -28,7 +28,7 @@ export default function App() {
         <WishlistProvider>
           <AuthProvider>
             <BrowserRouter>
-              <div className="flex flex-col min-h-screen transition-colors duration-300">
+              <div className="flex flex-col min-h-screen bg-slate-50 text-slate-900 dark:bg-[#101116] dark:text-[#F4F2EE] transition-colors duration-300">
                 <Navbar />
                 <main className="flex-grow">
                   <Routes>

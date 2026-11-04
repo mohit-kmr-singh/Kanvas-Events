@@ -88,31 +88,31 @@ export default function Home() {
           <img
             src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=2000&q=80"
             alt="Event Atmosphere"
-            className="w-full h-full object-cover object-center opacity-25 dark:opacity-20 scale-105 animate-pulse duration-10000"
+            className="w-full h-full object-cover object-center opacity-15 dark:opacity-20 scale-105 animate-pulse duration-10000"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#101116]/80 via-[#101116]/95 to-[#101116]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-purple-100/70 via-slate-50/90 to-slate-50 dark:from-[#101116]/80 dark:via-[#101116]/95 dark:to-[#101116]" />
           {/* Ambient Purple Light Orbs */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#8055FF]/20 rounded-full blur-[120px] pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-purple-600/15 rounded-full blur-[140px] pointer-events-none" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#8055FF]/10 dark:bg-[#8055FF]/20 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-purple-600/10 dark:bg-purple-600/15 rounded-full blur-[140px] pointer-events-none" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
           {/* Badge Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs sm:text-sm font-semibold backdrop-blur-md animate-in fade-in slide-in-from-top-4 duration-700">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/30 text-[#8055FF] dark:text-purple-300 text-xs sm:text-sm font-semibold backdrop-blur-md animate-in fade-in slide-in-from-top-4 duration-700">
             <Sparkles className="w-4 h-4 text-[#8055FF]" />
             <span>Discover Unforgettable Moments & Gatherings</span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white font-['Outfit'] leading-[1.1]">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white font-['Outfit'] leading-[1.1]">
             Every Event <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-purple-400 via-[#8055FF] to-indigo-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-600 via-[#8055FF] to-indigo-500 dark:from-purple-400 dark:via-[#8055FF] dark:to-indigo-300 bg-clip-text text-transparent">
               Has a Story.
             </span>
           </h1>
 
           {/* Description */}
-          <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed">
+          <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
             Kanvas Events is your gateway to world-class technology summits, electrifying music odysseys, cultural festivals, and hands-on masterclasses. Explore, wishlist, and register in seconds.
           </p>
 
@@ -128,26 +128,26 @@ export default function Home() {
 
             <Link
               to="/calendar"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold bg-white/10 hover:bg-white/15 text-white border border-white/20 backdrop-blur-md hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold bg-white dark:bg-white/10 hover:bg-slate-100 dark:hover:bg-white/15 text-slate-800 dark:text-white border border-slate-300 dark:border-white/20 shadow-md dark:shadow-none backdrop-blur-md hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
             >
-              <Calendar className="w-5 h-5 text-purple-300" />
+              <Calendar className="w-5 h-5 text-[#8055FF] dark:text-purple-300" />
               <span>View Event Calendar</span>
             </Link>
           </div>
 
           {/* Quick search hint pills */}
-          <div className="pt-4 flex items-center justify-center gap-2 flex-wrap text-xs text-slate-400">
-            <span className="font-medium text-slate-500">Popular Searches:</span>
-            <Link to="/events?category=technology" className="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 hover:text-white transition-colors">
+          <div className="pt-4 flex items-center justify-center gap-2 flex-wrap text-xs text-slate-500 dark:text-slate-400">
+            <span className="font-semibold text-slate-600 dark:text-slate-400">Popular Searches:</span>
+            <Link to="/events?category=technology" className="px-2.5 py-1 rounded-lg bg-slate-200/70 hover:bg-slate-300 dark:bg-white/5 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
               #AI-Summit
             </Link>
-            <Link to="/events?category=music" className="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 hover:text-white transition-colors">
+            <Link to="/events?category=music" className="px-2.5 py-1 rounded-lg bg-slate-200/70 hover:bg-slate-300 dark:bg-white/5 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
               #ElectronicMusic
             </Link>
-            <Link to="/events?category=sports" className="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 hover:text-white transition-colors">
+            <Link to="/events?category=sports" className="px-2.5 py-1 rounded-lg bg-slate-200/70 hover:bg-slate-300 dark:bg-white/5 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
               #CityMarathon
             </Link>
-            <Link to="/events?category=workshops" className="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 hover:text-white transition-colors">
+            <Link to="/events?category=workshops" className="px-2.5 py-1 rounded-lg bg-slate-200/70 hover:bg-slate-300 dark:bg-white/5 dark:hover:bg-white/10 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
               #UIDesignSprint
             </Link>
           </div>
@@ -158,27 +158,27 @@ export default function Home() {
       {/* NEXT BIG EVENT COUNTDOWN BANNER                          */}
       {/* ======================================================== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
-        <div className="relative rounded-3xl overflow-hidden border border-purple-500/30 bg-gradient-to-r from-[#171822] via-[#20212A] to-[#171822] shadow-2xl p-6 sm:p-10 backdrop-blur-xl">
+        <div className="relative rounded-3xl overflow-hidden border border-purple-200 dark:border-purple-500/30 bg-white dark:bg-gradient-to-r dark:from-[#171822] dark:via-[#20212A] dark:to-[#171822] shadow-2xl p-6 sm:p-10 backdrop-blur-xl">
           {/* Subtle neon accent line */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#8055FF] to-transparent" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Event Info */}
             <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-[#8055FF]/20 text-purple-300 text-xs font-bold uppercase tracking-wider">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-[#8055FF]/10 dark:bg-[#8055FF]/20 text-[#8055FF] dark:text-purple-300 text-xs font-bold uppercase tracking-wider">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
                 Next Flagship Gathering
               </div>
 
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white font-['Outfit'] leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white font-['Outfit'] leading-tight">
                 {nextMajorEvent.title}
               </h2>
 
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed line-clamp-2">
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
                 {nextMajorEvent.shortDescription}
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-300 pt-1">
+              <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300 pt-1">
                 <span className="flex items-center gap-1.5 font-medium">
                   <Calendar className="w-4 h-4 text-[#8055FF]" />
                   {nextMajorEvent.date} ({nextMajorEvent.time})
@@ -191,7 +191,7 @@ export default function Home() {
             </div>
 
             {/* Countdown & CTA */}
-            <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-between gap-6 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-8">
+            <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-between gap-6 border-t lg:border-t-0 lg:border-l border-slate-200 dark:border-white/10 pt-6 lg:pt-0 lg:pl-8">
               <CountdownTimer
                 targetDate={nextMajorEvent.countdownTarget}
                 label="Countdown to Kickoff"
@@ -206,7 +206,7 @@ export default function Home() {
                 </Link>
                 <Link
                   to={`/events/${nextMajorEvent.id}`}
-                  className="px-4 py-3 rounded-xl font-bold text-sm bg-white/10 hover:bg-white/20 text-white border border-white/15 transition-all text-center"
+                  className="px-4 py-3 rounded-xl font-bold text-sm bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 text-slate-800 dark:text-white border border-slate-200 dark:border-white/15 transition-all text-center"
                 >
                   Event Details
                 </Link>
