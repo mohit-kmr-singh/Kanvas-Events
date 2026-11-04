@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, MapPin, Clock, Heart, Users, ArrowUpRight } from 'lucide-react';
+import { Calendar, MapPin, Heart, Users, ArrowUpRight } from 'lucide-react';
 import { useWishlist } from '../context/WishlistContext';
 
 export default function EventCard({ event, featuredVariant = false }) {

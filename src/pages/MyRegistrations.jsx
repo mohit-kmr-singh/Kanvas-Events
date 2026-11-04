@@ -4,17 +4,12 @@ import {
   Ticket, 
   Calendar, 
   MapPin, 
-  Clock, 
   Trash2, 
   Eye, 
-  Printer, 
   Search, 
   Compass, 
   X, 
-  AlertTriangle, 
-  CheckCircle2, 
-  ChevronRight,
-  Sparkles
+  AlertTriangle 
 } from 'lucide-react';
 import { getSavedRegistrations, cancelRegistration } from '../utils/registrationUtils';
 import TicketPass from '../components/TicketPass';
@@ -27,14 +22,14 @@ export default function MyRegistrations() {
   const [confirmCancelId, setConfirmCancelId] = useState(null); // ID of registration to cancel
   const { addToast } = useToast();
 
-  useEffect(() => {
-    loadRegistrations();
-  }, []);
-
   const loadRegistrations = () => {
     const list = getSavedRegistrations();
     setRegistrations(list);
   };
+
+  useEffect(() => {
+    loadRegistrations();
+  }, []);
 
   const handleCancel = (id) => {
     const success = cancelRegistration(id);

@@ -14,8 +14,8 @@ export function getSavedRegistrations() {
   try {
     const data = localStorage.getItem(REGISTRATIONS_KEY);
     return data ? JSON.parse(data) : [];
-  } catch (e) {
-    console.error('Error fetching registrations from localStorage:', e);
+  } catch (err) {
+    console.error('Error fetching registrations from localStorage:', err);
     return [];
   }
 }
@@ -31,9 +31,9 @@ export function saveRegistration(registrationData) {
     const updated = [newEntry, ...list];
     localStorage.setItem(REGISTRATIONS_KEY, JSON.stringify(updated));
     return newEntry;
-  } catch (e) {
-    console.error('Error saving registration to localStorage:', e);
-    throw new Error('Failed to save registration.');
+  } catch (err) {
+    console.error('Error saving registration to localStorage:', err);
+    throw new Error('Failed to save registration.', { cause: err });
   }
 }
 
@@ -52,8 +52,8 @@ export function cancelRegistration(registrationId) {
     const filtered = list.filter((item) => item.id !== registrationId);
     localStorage.setItem(REGISTRATIONS_KEY, JSON.stringify(filtered));
     return true;
-  } catch (e) {
-    console.error('Error canceling registration:', e);
+  } catch (err) {
+    console.error('Error canceling registration:', err);
     return false;
   }
 }
@@ -62,7 +62,7 @@ export function getRecentlyViewed() {
   try {
     const data = localStorage.getItem(RECENTLY_VIEWED_KEY);
     return data ? JSON.parse(data) : [];
-  } catch (e) {
+  } catch {
     return [];
   }
 }
@@ -76,7 +76,7 @@ export function addRecentlyViewed(eventId) {
       list = list.slice(0, 8);
     }
     localStorage.setItem(RECENTLY_VIEWED_KEY, JSON.stringify(list));
-  } catch (e) {
-    console.error('Error updating recently viewed:', e);
+  } catch (err) {
+    console.error('Error updating recently viewed:', err);
   }
 }

@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom';
 import { 
   Sparkles, 
   Send, 
-  Heart,
   ShieldCheck,
   CheckCircle2,
-  Globe,
-  Share2
+  Globe
 } from 'lucide-react';
 import { validateEmail } from '../utils/validation';
 import { useToast } from '../context/ToastContext';

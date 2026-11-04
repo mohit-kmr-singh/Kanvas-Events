@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { 
   Ticket, 
@@ -8,13 +8,11 @@ import {
   User, 
   Mail, 
   Phone, 
-  CheckCircle2, 
   AlertTriangle, 
   ArrowLeft, 
   ShieldCheck, 
   Lock,
-  ChevronRight,
-  Sparkles
+  ChevronRight
 } from 'lucide-react';
 import { EVENTS_DATA } from '../data/events';
 import { validateEmail, validateFullName, validatePhone } from '../utils/validation';
@@ -25,33 +23,23 @@ import { useToast } from '../context/ToastContext';
 export default function Registration() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { user, isAuthenticated } = useAuth();
+  const { user } = useAuth();
   const { addToast } = useToast();
 
   const event = EVENTS_DATA.find((e) => e.id === id);
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState(() => ({
     fullName: user ? user.name : '',
     email: user ? user.email : '',
     phone: '',
     ticketTier: 'General Admission',
     specialRequests: '',
     agreeTerms: false
-  });
+  }));
 
   const [errors, setErrors] = useState({});
   const [duplicateWarning, setDuplicateWarning] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-
-  useEffect(() => {
-    if (user) {
-      setFormData((prev) => ({
-        ...prev,
-        fullName: prev.fullName || user.name,
-        email: prev.email || user.email
-      }));
-    }
-  }, [user]);
 
   if (!event) {
     return (

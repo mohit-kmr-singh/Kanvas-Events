@@ -7,10 +7,7 @@ import {
   Heart, 
   ShieldCheck, 
   Zap, 
-  Globe, 
-  Users, 
-  ArrowRight,
-  Award
+  ArrowRight
 } from 'lucide-react';
 
 export default function About() {

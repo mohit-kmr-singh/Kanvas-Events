@@ -20,7 +20,7 @@ With over 35 keynote sessions, live interactive demos, collaborative hacking zon
     highlights: [
       '35+ Keynote addresses from pioneering AI and quantum lab leads',
       'Exclusive hands-on sandbox labs with state-of-the-art compute clusters',
-      'Startup pitch showcase with \$2M in non-dilutive seed grants',
+      'Startup pitch showcase with $2M in non-dilutive seed grants',
       'Direct networking opportunities with 1,500+ tech executives and researchers'
     ],
     schedule: [
@@ -227,7 +227,7 @@ Every participant builds a production-ready Figma component library and learns b
 Concludes with a closed-door networking cocktail hour connecting vetted early-stage founders with accredited investors.`,
     highlights: [
       'Interactive teardown of actual seed and Series A term sheets',
-      'Panel of 6 active managing partners managing \$500M+ in assets',
+      'Panel of 6 active managing partners managing $500M+ in assets',
       'One-on-one 10-minute speed matching with angel investors',
       'Complimentary access to the 2027 Startup Fundraising Playbook'
     ],
@@ -265,11 +265,11 @@ Concludes with a closed-door networking cocktail hour connecting vetted early-st
     shortDescription: 'Defend against modern ransomware, explore cloud security postures, and participate in red vs. blue team wargames.',
     description: `Zero-Day Shield brings together chief information security officers, ethical white-hat hackers, and defensive infrastructure engineers. Learn how to protect critical infrastructure against state-sponsored intrusions, secure AI model pipelines, and enforce zero-trust policies.
 
-Features a live Capture The Flag (CTF) tournament with a \$10,000 bounty prize pool.`,
+Features a live Capture The Flag (CTF) tournament with a $10,000 bounty prize pool.`,
     highlights: [
       'Live Red vs Blue team wargame simulation on virtualized enterprise infra',
       'Deep dive into securing containerized microservices and Kubernetes clusters',
-      '\$10,000 CTF challenge open to all in-person attendees',
+      '$10,000 CTF challenge open to all in-person attendees',
       'Exclusive vulnerability research reveals and threat intelligence briefings'
     ],
     schedule: [
@@ -383,12 +383,12 @@ Accompanied by synchronized ambient lighting and gentle outdoor heating lamps ac
     location: 'Los Angeles, CA',
     image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80',
     bannerImage: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80',
-    shortDescription: 'Witness top international tactical shooter and MOBA teams compete for a \$500,000 championship trophy.',
+    shortDescription: 'Witness top international tactical shooter and MOBA teams compete for a $500,000 championship trophy.',
     description: `Titan Clash is the ultimate celebration of competitive esports. Watch the world's top 8 qualified teams duel on high-refresh 360-degree LED displays with roaring stadium audio and expert live casting.
 
 Features a free-to-play gaming arcade with the latest titles and VR gaming rigs.`,
     highlights: [
-      'Live arena battle with \$500,000 championship trophy at stake',
+      'Live arena battle with $500,000 championship trophy at stake',
       'Cast by premier commentators with instant slow-motion tactical replays',
       'Cosplay contest with prizes for community creators',
       'Meet-and-greet autograph sessions with top professional esports athletes'

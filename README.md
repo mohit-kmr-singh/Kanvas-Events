@@ -1,16 +1,260 @@
-# React + Vite
+# 🎟️ Kanvas Events — Every Event Has a Story
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![React](https://img.shields.io/badge/React-19.3.1-blue?logo=react)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v4.0-38bdf8?logo=tailwindcss)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-8.3.5-646cff?logo=vite)](https://vitejs.dev/)
+[![License](https://img.shields.io/badge/License-MIT-purple)](#)
+[![GitHub](https://img.shields.io/badge/GitHub-mohit--kmr--singh%2FKanvas--Events-181717?logo=github)](https://github.com/mohit-kmr-singh/Kanvas-Events)
 
-Currently, two official plugins are available:
+**Kanvas Events** is a modern, responsive, frontend-only event discovery and registration web application designed to help users explore upcoming events, discover experiences across technology, music, cultural celebrations, sports, workshops, and seminars, access detailed run-of-show schedules, and register for digital passes with instant QR code generation.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The platform operates entirely in the browser using React component-based architecture and browser Local Storage—requiring zero external databases or backend servers.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🌟 Key Highlights & Design Philosophy
 
-## Expanding the ESLint configuration
+- **Cinematic Dark & Light Modes**: Styled with Electric Purple (`#8055FF`), deep Charcoal (`#101116`), surface cards (`#20212A`), and off-white typography (`#F4F2EE`).
+- **Zero-Friction Client-Side Storage**: Event registrations, saved wishlist items, theme settings, and demo user sessions persist seamlessly across browser refreshes via the Local Storage API.
+- **Dynamic QR Code Ticket Generation**: Instant verifiable admission passes rendered in-browser using `qrcode`, with formatted print styles (`@media print`) and PDF save capabilities.
+- **Interactive Multi-Filter & Search**: Full-text keyword search across titles, keynotes, venues, cities, and tags with category pills, date filters, price toggles, and multi-mode sorting.
+- **Micro-Interactions & Animation**: Real-time event countdown timers, celebration confetti blasts (`canvas-confetti`), toast notifications, interactive FAQ accordions, and responsive view toggles (Grid vs. List).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Complete Website Features (By Module)
+
+### 📌 Module 1 – Homepage
+- **Sticky Navigation Bar**: Kanvas Events branding mark, links (*Home, Events, Calendar, About, Contact, My Registrations*), active indicator, wishlist counter badge, theme toggle, and responsive mobile drawer.
+- **Cinematic Hero Section**: Ambient purple lighting orbs, headline *"Every Event Has a Story."*, supporting description, primary *Explore Events* and *Event Calendar* CTAs, plus popular search tag pills.
+- **Next Big Event Countdown**: Featured countdown banner highlighting the flagship upcoming convention with live days, hours, minutes, and seconds countdown ticking every second.
+- **Platform Statistics**: Animated metric cards displaying upcoming events, 25,000+ community attendees, 6+ categories, and 12+ metro locations.
+- **Explore by Category**: Interactive category cards with curated icons, event counts, and direct deep-linking for *Technology, Music, Cultural, Sports, Workshops,* and *Seminars*.
+- **Featured Events Section**: Highlighted 4-card grid with image hover zoom, category badges, price tags, attendance capacity, and wishlist quick-action.
+- **The Kanvas Advantage**: Value proposition breakdown (*Seamless Digital Booking, Dynamic QR-Code Passes, Curated High-Value Gatherings, Personalized Discovery*).
+- **Upcoming Experiences Preview**: Additional curated event cards.
+- **Promotional CTA Banner**: High-impact gradient card for attendees and event hosts.
+- **Footer**: Brand tagline, social media links, platform navigation, category directory, working newsletter subscription with validation, and privacy notice.
+
+### 📌 Module 2 – Explore Events (`/events`)
+- **Full Directory Display**: Access all curated events in one responsive interface.
+- **Live Search**: Instant keyword filtering across event titles, short descriptions, venue names, cities, and tags with a one-click clear button.
+- **Multi-Filter System**:
+  - Filter by Category (*All, Technology, Music, Cultural, Sports, Workshops, Seminars*).
+  - Filter by Location (*All Cities, San Francisco, Brooklyn, Chicago, Seattle, Austin, Boston, San Jose, Denver, Los Angeles*).
+  - Filter by Price (*All, Free Only, Paid Only*).
+  - Filter by Featured status (*Featured Only* toggle).
+- **Multi-Option Sorting**:
+  - Date: Soonest First / Latest First
+  - Alphabetical: A → Z / Z → A
+- **View Switcher**: Toggle between **Grid View** and **List View** with persistent responsive layouts.
+- **Load More Pagination**: Incremental event loading with remaining count indicators.
+- **Empty State Handling**: Custom illustrated empty state with a "Reset All Filters" button.
+- **URL Parameter Synchronization**: Reads and writes URL query parameters (e.g. `?category=technology&featured=true`) allowing shareable filtered links.
+
+### 📌 Module 3 – Event Details (`/events/:id`)
+- **Hero Banner Header**: Cinematic backdrop image, breadcrumbs navigation, category and price badges, title, full date, time, and venue.
+- **Comprehensive Event Overview**: Detailed multi-paragraph description and searchable hashtag badges.
+- **Highlights & Takeaways**: Checkmark grid detailing keynote points and unique attendee perks.
+- **Run of Show Schedule / Agenda**: Timeline breakdown with hour-by-hour milestones and designated speakers.
+- **Organizer Information**: Profile card featuring organizer avatar, name, role, email, and biography.
+- **Interactive Sticky Booking Sidebar**:
+  - Live seat capacity meter and percentage fill bar.
+  - Dedicated event countdown timer.
+  - "Register for Event" CTA or "Sold Out" state.
+  - "Add to Wishlist" toggle button.
+  - "Share Event" button using Web Share API with automatic clipboard fallback and toast feedback.
+  - Venue and interactive map location preview card.
+- **Related & Recommended Events**: Curated event suggestions from the same category.
+
+### 📌 Module 4 – Event Registration (`/events/:id/register`)
+- **Attendee Form**:
+  - Full Name (required, validation for min 3 characters, alphabetic characters).
+  - Email Address (required, RFC email regex validation).
+  - Phone Number (required, minimum 10 digits validation).
+  - Pass Tier Selection (General Admission, VIP Access Pass, Early Supporter).
+  - Special Requests / Notes (dietary, accessibility preferences).
+  - Terms & Conditions agreement checkbox.
+- **Duplicate Registration Prevention**: Automatically verifies Local Storage records for matching `eventId` and `email` combinations; alerts user with an existing registration notice and direct link to their confirmed pass.
+- **Auto-Fill Integration**: Automatically prefills name and email if the user is authenticated via the demo account.
+- **Live Error Feedback**: Contextual inline error messages beneath form fields and global toast alert dispatch.
+- **Selected Event Summary Card**: Visual summary of the event being registered for.
+
+### 📌 Module 5 – Registration Management
+- **Registration Success Page (`/registration-success`)**:
+  - Dual-burst colorful confetti celebration animation powered by `canvas-confetti`.
+  - Automatically generated unique Registration ID (e.g. `KNV-2026-XXXX`).
+  - Admission pass summary with all attendee and venue metadata.
+  - Real-time high-resolution QR code generated on the fly via `qrcode` for venue check-in verification.
+  - Direct print action invoking browser print dialog with print-optimized CSS (`@media print`).
+- **My Registrations Dashboard (`/my-registrations`)**:
+  - Live list of all confirmed admissions stored in `localStorage`.
+  - Search/filter across registered tickets by title, city, or ID.
+  - "View QR Pass" modal with full printable digital boarding pass.
+  - "Cancel Registration" functionality with safety confirmation modal.
+  - Empty state with direct "Discover Events" action button.
+
+### 📌 Module 6 – About Us & Contact Pages
+- **About Us (`/about`)**:
+  - Platform founding story, mission, and vision statements.
+  - Core values (*Curated Excellence, Effortless Accessibility, Privacy By Default, Passionate Communities*).
+  - Meet the Leadership Team profiles.
+- **Contact Us (`/contact`)**:
+  - Contact form with name, email, subject, and message inputs.
+  - Client-side validation ensuring valid format and minimum message lengths.
+  - Confirmation alert with frontend demonstration limitation disclosure.
+  - Direct contact channels (phone, email, headquarters address, operating hours).
+  - Interactive FAQ accordion answering the 6 most common questions.
+
+### 📌 Module 7 & 8 – Bonus Features & UI/UX Polish
+- **Event Wishlist (`/wishlist`)**: Save favorite events with instant heart toggle, header count badge, and dedicated wishlist gallery.
+- **Interactive Event Calendar (`/calendar`)**: Full calendar view with month switching, date dots indicating event days, and interactive single-day or monthly event feeds.
+- **Demo User Authentication (`/login` & `/signup`)**: Pre-loaded demo credentials (`attendee@kanvasevents.com`), avatar generation, session persistence, and instant registration prefill.
+- **Custom 404 Not Found Page**: Illustrated error page with direct navigation back home or to explore.
+- **Scroll-To-Top Button**: Smooth floating button appearing on scroll, plus automatic scroll restoration on route changes.
+- **Custom Toast Notification System**: Animated alert toasts for copying links, saving wishlist items, and confirming registrations.
+
+---
+
+## 🛠️ Technology Stack
+
+| Category | Technology | Purpose |
+|---|---|---|
+| **Core Framework** | React 19.3 | Modern component-based UI development |
+| **Build Tool** | Vite 8.3 | High-speed bundling, HMR, and production optimization |
+| **Styling** | Tailwind CSS v4 | Utility-first styling, glassmorphism, responsive layouts |
+| **Routing** | React Router DOM v7 | Dynamic client-side routing & route state management |
+| **Icons** | Lucide React | High-resolution SVG interface icons |
+| **QR Code Engine** | qrcode | Client-side QR generation for verifiable event admission |
+| **Animations** | canvas-confetti | Celebration effects upon successful registration |
+| **Data Persistence** | Local Storage API | Browser storage for registrations, wishlist, and theme |
+
+---
+
+## 📁 Project Directory Structure
+
+```text
+Kanvas-Events/
+├── public/
+│   ├── favicon.svg              # Custom Kanvas Events SVG favicon
+│   └── ...
+├── src/
+│   ├── components/
+│   │   ├── CountdownTimer.jsx   # Live days/hours/mins/secs countdown component
+│   │   ├── EventCard.jsx        # Reusable card with zoom, tags, price, wishlist
+│   │   ├── Footer.jsx           # Global footer with newsletter & social links
+│   │   ├── Navbar.jsx           # Sticky glassmorphic navbar with mobile drawer
+│   │   ├── ScrollToTop.jsx      # Scroll restoration & floating back-to-top button
+│   │   ├── SearchBar.jsx        # Search input with clear button
+│   │   ├── ThemeToggle.jsx      # Light / Dark mode toggle switch
+│   │   └── TicketPass.jsx       # Boarding-pass style ticket with QR code & print CSS
+│   ├── context/
+│   │   ├── AuthContext.jsx      # Demo authentication provider
+│   │   ├── ThemeContext.jsx     # Dark/Light theme provider with localStorage sync
+│   │   ├── ToastContext.jsx     # Global alert toast provider
+│   │   └── WishlistContext.jsx  # Event wishlist provider with toast alerts
+│   ├── data/
+│   │   ├── categories.js        # Categories definition with color gradients & counts
+│   │   └── events.js            # Curated event dataset with schedules, coordinates, tags
+│   ├── hooks/
+│   │   └── useLocalStorage.js   # Custom hook for safe localStorage binding
+│   ├── pages/
+│   │   ├── About.jsx            # About page: mission, vision, values, team
+│   │   ├── CalendarView.jsx     # Interactive monthly event calendar
+│   │   ├── Contact.jsx          # Contact page: form validation, hours, FAQ accordion
+│   │   ├── EventDetails.jsx     # Full event detail page: agenda, countdown, share, map
+│   │   ├── ExploreEvents.jsx    # Search, multi-filters, grid/list view, pagination
+│   │   ├── Home.jsx             # Flagship homepage with hero, countdown, stats, categories
+│   │   ├── Login.jsx            # Demo login page with pre-filled test credentials
+│   │   ├── MyRegistrations.jsx  # Attendee dashboard: ticket list, QR modal, cancel pass
+│   │   ├── NotFound.jsx         # Custom 404 error page
+│   │   ├── Registration.jsx     # Registration form with validation & duplicate check
+│   │   ├── RegistrationSuccess.jsx # Success screen with confetti & ticket pass
+│   │   ├── Signup.jsx           # Demo account creation page
+│   │   └── Wishlist.jsx         # Saved events gallery page
+│   ├── utils/
+│   │   ├── registrationUtils.js # IDs, localStorage persistence, duplicate check
+│   │   └── validation.js        # Email, phone, name validation helpers
+│   ├── App.css
+│   ├── App.jsx                  # Main application router and providers
+│   ├── index.css                # Tailwind base styles, scrollbars, print styles
+│   └── main.jsx                 # Vite application entry point
+├── index.html                   # HTML entry point with Google Fonts & meta tags
+├── package.json                 # Dependencies and build scripts
+├── vite.config.js               # Vite configuration with Tailwind CSS plugin
+└── README.md                    # Comprehensive project documentation
+```
+
+---
+
+## 💻 Local Development Setup
+
+### Prerequisites
+- **Node.js**: v18.0.0 or higher
+- **npm**: v9.0.0 or higher
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/mohit-kmr-singh/Kanvas-Events.git
+cd Kanvas-Events
+```
+
+### 2. Install Dependencies
+```bash
+npm install
+```
+
+### 3. Start the Development Server
+```bash
+npm run dev
+```
+Open your browser and navigate to `http://localhost:5173` to view the application.
+
+### 4. Build for Production
+```bash
+npm run build
+```
+The optimized production bundle will be generated in the `dist/` directory.
+
+### 5. Preview Production Build Locally
+```bash
+npm run preview
+```
+
+### 6. Lint Code Quality
+```bash
+npm run lint
+```
+
+---
+
+## 🚢 Deployment Guide
+
+This application is ready for one-click deployment on **Vercel** or **Netlify**:
+
+### Deploying on Vercel
+1. Push your repository to GitHub.
+2. Visit [Vercel](https://vercel.com) and import the `Kanvas-Events` repository.
+3. Configure settings:
+   - **Framework Preset**: `Vite`
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+4. For client-side routing on Vercel, ensure rewrite rule is active (or add a simple `vercel.json` with rewrite to `/index.html`).
+5. Click **Deploy**.
+
+### Deploying on Netlify
+1. Log in to [Netlify](https://www.netlify.com).
+2. Create a new site from your GitHub repository.
+3. Set build settings:
+   - **Build Command**: `npm run build`
+   - **Publish Directory**: `dist`
+4. Add a `public/_redirects` file containing `/* /index.html 200` for client-side routing.
+5. Click **Deploy Site**.
+
+---
+
+## 📄 License & Attribution
+
+Designed and developed for the **Kanvas Events** platform.  
+Images curated from [Unsplash](https://unsplash.com) with event photography licenses.  
+Icons provided by [Lucide Icons](https://lucide.dev).

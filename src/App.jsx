@@ -15,8 +15,11 @@ import RegistrationSuccess from './pages/RegistrationSuccess';
 import MyRegistrations from './pages/MyRegistrations';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Wishlist from './pages/Wishlist';
+import CalendarView from './pages/CalendarView';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 import NotFound from './pages/NotFound';
-import StubPage from './pages/StubPage';
 
 export default function App() {
   return (
@@ -37,10 +40,10 @@ export default function App() {
                     <Route path="/my-registrations" element={<MyRegistrations />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
-                    <Route path="/wishlist" element={<StubPage title="Event Wishlist" />} />
-                    <Route path="/calendar" element={<StubPage title="Event Calendar" />} />
-                    <Route path="/login" element={<StubPage title="Demo Login" />} />
-                    <Route path="/signup" element={<StubPage title="Demo Sign Up" />} />
+                    <Route path="/wishlist" element={<Wishlist />} />
+                    <Route path="/calendar" element={<CalendarView />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/signup" element={<Signup />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </main>

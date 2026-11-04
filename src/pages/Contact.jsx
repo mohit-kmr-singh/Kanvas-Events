@@ -6,12 +6,10 @@ import {
   Clock, 
   Send, 
   CheckCircle2, 
-  HelpCircle, 
   ChevronDown, 
   ChevronUp, 
-  Sparkles,
-  Info,
-  MessageSquare
+  Info, 
+  MessageSquare 
 } from 'lucide-react';
 import { validateEmail, validateFullName } from '../utils/validation';
 import { useToast } from '../context/ToastContext';

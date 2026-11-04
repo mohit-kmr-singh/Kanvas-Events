@@ -2,8 +2,6 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { 
   Compass, 
-  Filter, 
-  SlidersHorizontal, 
   Sparkles, 
   RotateCcw, 
   LayoutGrid, 
@@ -11,12 +9,10 @@ import {
   Calendar, 
   MapPin, 
   DollarSign, 
-  Check, 
-  ChevronDown,
-  Search,
-  ArrowRight,
-  Heart,
-  Users
+  ChevronDown, 
+  Search, 
+  Heart, 
+  Users 
 } from 'lucide-react';
 import SearchBar from '../components/SearchBar';
 import EventCard from '../components/EventCard';

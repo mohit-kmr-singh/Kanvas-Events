@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
-import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import confetti from 'canvas-confetti';
-import { CheckCircle2, Ticket, Compass, ArrowRight, Sparkles } from 'lucide-react';
+import { CheckCircle2, Ticket, Compass } from 'lucide-react';
 import TicketPass from '../components/TicketPass';
 import { getSavedRegistrations } from '../utils/registrationUtils';
 
 export default function RegistrationSuccess() {
   const location = useLocation();
-  const navigate = useNavigate();
 
   // Try getting passed registration or fallback to latest saved
   const passedRegistration = location.state?.registration;

@@ -23,7 +23,7 @@ export function AuthProvider({ children }) {
     }
   }, [user]);
 
-  const login = (email, password, name) => {
+  const login = (email, _password, name) => {
     const newUser = {
       name: name || email.split('@')[0],
       email: email.trim().toLowerCase(),
@@ -35,7 +35,7 @@ export function AuthProvider({ children }) {
     return true;
   };
 
-  const signup = (name, email, password) => {
+  const signup = (name, email, _password) => {
     const newUser = {
       name: name.trim(),
       email: email.trim().toLowerCase(),

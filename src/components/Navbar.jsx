@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { 
   Sparkles, 
-  Calendar, 
   Compass, 
   Ticket, 
   Heart, 
@@ -10,7 +9,6 @@ import {
   Mail, 
   Menu, 
   X, 
-  User, 
   LogOut,
   CalendarRange
 } from 'lucide-react';
@@ -22,10 +20,10 @@ import { getSavedRegistrations } from '../utils/registrationUtils';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [registrationCount, setRegistrationCount] = useState(0);
   const { wishlistCount } = useWishlist();
   const { user, isAuthenticated, logout } = useAuth();
-  const location = useLocation();
+
+  const registrationCount = getSavedRegistrations().length;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,14 +32,6 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Close mobile drawer on route navigation
-  useEffect(() => {
-    setIsOpen(false);
-    // Refresh registration count
-    const regs = getSavedRegistrations();
-    setRegistrationCount(regs.length);
-  }, [location.pathname]);
 
   const navLinks = [
     { name: 'Home', path: '/', icon: Sparkles },
@@ -204,7 +194,10 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {isOpen && (
-        <div className="md:hidden border-b border-slate-200 dark:border-white/10 bg-white dark:bg-[#101116] px-4 pt-3 pb-6 space-y-2 shadow-2xl animate-in slide-in-from-top duration-200">
+        <div 
+          onClick={() => setIsOpen(false)}
+          className="md:hidden border-b border-slate-200 dark:border-white/10 bg-white dark:bg-[#101116] px-4 pt-3 pb-6 space-y-2 shadow-2xl animate-in slide-in-from-top duration-200"
+        >
           {navLinks.map((link) => (
             <NavLink
               key={link.path}

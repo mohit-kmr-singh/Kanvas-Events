@@ -30,8 +30,8 @@ export function validatePhone(phone) {
   if (!phone || !phone.trim()) {
     return 'Phone number is required.';
   }
-  // Strip spaces, dashes, brackets
-  const cleaned = phone.replace(/[\s\-\(\)\+]/g, '');
+  // Strip spaces, dashes, brackets, plus
+  const cleaned = phone.replace(/[\s\-()+]/g, '');
   if (cleaned.length < 10 || cleaned.length > 15 || !/^\d+$/.test(cleaned)) {
     return 'Please enter a valid phone number (at least 10 digits).';
   }

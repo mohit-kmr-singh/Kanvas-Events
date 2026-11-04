@@ -2,19 +2,13 @@ import React, { useEffect, useState } from 'react';
 import QRCode from 'qrcode';
 import { 
   Calendar, 
-  Clock, 
   MapPin, 
-  User, 
-  Mail, 
-  Phone, 
   Sparkles, 
   Printer, 
-  Download, 
-  CheckCircle2, 
-  ShieldCheck 
+  CheckCircle2 
 } from 'lucide-react';
 
-export default function TicketPass({ registration, onPrint, showActions = true }) {
+export default function TicketPass({ registration, showActions = true }) {
   const [qrCodeUrl, setQrCodeUrl] = useState('');
 
   useEffect(() => {

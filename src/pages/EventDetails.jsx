@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import { 
   Calendar, 
   Clock, 
@@ -9,25 +9,21 @@ import {
   Share2, 
   ArrowLeft, 
   CheckCircle, 
-  User, 
-  Mail, 
-  Compass, 
-  Sparkles,
-  Ticket,
-  ChevronRight,
-  ShieldCheck,
-  AlertCircle
+  Ticket, 
+  ChevronRight, 
+  ShieldCheck, 
+  AlertCircle,
+  Sparkles
 } from 'lucide-react';
 import { EVENTS_DATA } from '../data/events';
 import CountdownTimer from '../components/CountdownTimer';
 import EventCard from '../components/EventCard';
 import { useWishlist } from '../context/WishlistContext';
 import { useToast } from '../context/ToastContext';
-import { addRecentlyViewed, isAlreadyRegistered } from '../utils/registrationUtils';
+import { addRecentlyViewed } from '../utils/registrationUtils';
 
 export default function EventDetails() {
   const { id } = useParams();
-  const navigate = useNavigate();
   const { isInWishlist, toggleWishlist } = useWishlist();
   const { addToast } = useToast();
 
