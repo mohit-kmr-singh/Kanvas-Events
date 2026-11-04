@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import ExploreEvents from './pages/ExploreEvents';
+import EventDetails from './pages/EventDetails';
 import NotFound from './pages/NotFound';
 import StubPage from './pages/StubPage';
 
@@ -25,7 +26,7 @@ export default function App() {
                   <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/events" element={<ExploreEvents />} />
-                    <Route path="/events/:id" element={<StubPage title="Event Details" />} />
+                    <Route path="/events/:id" element={<EventDetails />} />
                     <Route path="/events/:id/register" element={<StubPage title="Event Registration" />} />
                     <Route path="/registration-success" element={<StubPage title="Registration Success" />} />
                     <Route path="/my-registrations" element={<StubPage title="My Registrations" />} />
