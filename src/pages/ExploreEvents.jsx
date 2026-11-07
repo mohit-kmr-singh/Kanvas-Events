@@ -8,7 +8,7 @@ import {
   List, 
   Calendar, 
   MapPin, 
-  DollarSign, 
+  IndianRupee, 
   ChevronDown, 
   Search, 
   Heart, 
@@ -287,7 +287,7 @@ export default function ExploreEvents() {
               <option value="free">Free Events Only</option>
               <option value="paid">Paid Events</option>
             </select>
-            <DollarSign className="w-3.5 h-3.5 text-emerald-500 absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <IndianRupee className="w-3.5 h-3.5 text-[#D79005] dark:text-[#F8D237] absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <ChevronDown className="w-3.5 h-3.5 text-slate-400 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           </div>
 

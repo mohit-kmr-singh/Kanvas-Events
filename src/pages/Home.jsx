@@ -80,9 +80,9 @@ export default function Home() {
   return (
     <div className="relative overflow-hidden">
       {/* ======================================================== */}
-      {/* HERO SECTION                                             */}
+      {/* HERO SECTION WITH ADJACENT COUNTDOWN                     */}
       {/* ======================================================== */}
-      <section className="relative min-h-[90vh] flex items-center justify-center pt-8 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="relative min-h-[85vh] flex items-center justify-center pt-8 pb-16 px-4 sm:px-6 lg:px-8">
         {/* Background Image with Cinematic Gradient Gradients */}
         <div className="absolute inset-0 z-0">
           <img
@@ -96,120 +96,140 @@ export default function Home() {
           <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-[#D79005]/10 dark:bg-[#D79005]/15 rounded-full blur-[140px] pointer-events-none" />
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8">
-          {/* Badge Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F2B006]/15 border border-[#F2B006]/30 text-[#D79005] dark:text-[#F8D237] text-xs sm:text-sm font-semibold backdrop-blur-md animate-in fade-in slide-in-from-top-4 duration-700">
-            <Sparkles className="w-4 h-4 text-[#D79005] dark:text-[#F8D237]" />
-            <span>Discover Unforgettable Moments & Gatherings</span>
-          </div>
-
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white font-['Outfit'] leading-[1.1]">
-            Every Event <br className="hidden sm:inline" />
-            <span className="bg-gradient-to-r from-[#D79005] via-[#F2B006] to-[#F8D237] bg-clip-text text-transparent">
-              Has a Story.
-            </span>
-          </h1>
-
-          {/* Description */}
-          <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
-            Kanvas Events is your gateway to world-class technology summits, electrifying music odysseys, cultural festivals, and hands-on masterclasses. Explore, wishlist, and register in seconds.
-          </p>
-
-          {/* Call-to-actions */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-            <Link
-              to="/events"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] shadow-xl shadow-[#F2B006]/25 hover:shadow-2xl hover:shadow-[#F2B006]/35 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group"
-            >
-              <span>Explore All Events</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-
-            <Link
-              to="/calendar"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl text-base font-bold bg-white dark:bg-[#2C3C55] hover:bg-amber-50/60 dark:hover:bg-[#394D6A] text-slate-800 dark:text-white border border-slate-300 dark:border-[#455A76] shadow-md dark:shadow-none backdrop-blur-md hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
-            >
-              <Calendar className="w-5 h-5 text-[#D79005] dark:text-[#F8D237]" />
-              <span>View Event Calendar</span>
-            </Link>
-          </div>
-
-          {/* Quick search hint pills */}
-          <div className="pt-4 flex items-center justify-center gap-2 flex-wrap text-xs text-slate-500 dark:text-slate-400">
-            <span className="font-semibold text-slate-600 dark:text-slate-400">Popular Searches:</span>
-            <Link to="/events?category=technology" className="px-2.5 py-1 rounded-lg bg-slate-200/70 hover:bg-slate-300 dark:bg-[#2C3C55] dark:hover:bg-[#394D6A] text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors border border-transparent dark:border-[#455A76]/40">
-              #AI-Summit
-            </Link>
-            <Link to="/events?category=music" className="px-2.5 py-1 rounded-lg bg-slate-200/70 hover:bg-slate-300 dark:bg-[#2C3C55] dark:hover:bg-[#394D6A] text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors border border-transparent dark:border-[#455A76]/40">
-              #ElectronicMusic
-            </Link>
-            <Link to="/events?category=sports" className="px-2.5 py-1 rounded-lg bg-slate-200/70 hover:bg-slate-300 dark:bg-[#2C3C55] dark:hover:bg-[#394D6A] text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors border border-transparent dark:border-[#455A76]/40">
-              #CityMarathon
-            </Link>
-            <Link to="/events?category=workshops" className="px-2.5 py-1 rounded-lg bg-slate-200/70 hover:bg-slate-300 dark:bg-[#2C3C55] dark:hover:bg-[#394D6A] text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors border border-transparent dark:border-[#455A76]/40">
-              #UIDesignSprint
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ======================================================== */}
-      {/* NEXT BIG EVENT COUNTDOWN BANNER                          */}
-      {/* ======================================================== */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
-        <div className="relative rounded-3xl overflow-hidden border border-amber-200/70 dark:border-[#455A76] bg-white dark:bg-gradient-to-r dark:from-[#121B28] dark:via-[#2C3C55] dark:to-[#121B28] shadow-2xl p-6 sm:p-10 backdrop-blur-xl">
-          {/* Subtle gold accent line */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#F2B006] to-transparent" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Event Info */}
-            <div className="lg:col-span-7 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-[#F2B006]/15 text-[#D79005] dark:text-[#F8D237] text-xs font-bold uppercase tracking-wider">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                Next Flagship Gathering
+        <div className="relative z-10 max-w-7xl mx-auto w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            {/* Left Column (7 cols): Introduction */}
+            <div className="lg:col-span-7 space-y-6 text-left">
+              {/* Badge Pill */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F2B006]/15 border border-[#F2B006]/30 text-[#D79005] dark:text-[#F8D237] text-xs sm:text-sm font-semibold backdrop-blur-md">
+                <Sparkles className="w-4 h-4 text-[#D79005] dark:text-[#F8D237]" />
+                <span>Discover Unforgettable Moments & Gatherings</span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white font-['Outfit'] leading-tight">
-                {nextMajorEvent.title}
-              </h2>
+              {/* Headline */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white font-['Outfit'] leading-[1.1]">
+                Every Event <br />
+                <span className="bg-gradient-to-r from-[#D79005] via-[#F2B006] to-[#F8D237] bg-clip-text text-transparent">
+                  Has a Story.
+                </span>
+              </h1>
 
-              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
-                {nextMajorEvent.shortDescription}
+              {/* Description */}
+              <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl">
+                Kanvas Events is your gateway to world-class technology summits, electrifying music odysseys, cultural festivals, and hands-on masterclasses hosted across KIIT Bhubaneswar. Explore, wishlist, and register in seconds.
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300 pt-1">
-                <span className="flex items-center gap-1.5 font-medium">
+              {/* Call-to-actions */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+                <Link
+                  to="/events"
+                  className="px-8 py-4 rounded-xl text-sm font-bold bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] shadow-xl shadow-[#F2B006]/25 hover:shadow-2xl hover:shadow-[#F2B006]/35 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 group"
+                >
+                  <span>Explore All Events</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+
+                <Link
+                  to="/calendar"
+                  className="px-8 py-4 rounded-xl text-sm font-bold bg-white dark:bg-[#2C3C55] hover:bg-amber-50/60 dark:hover:bg-[#394D6A] text-slate-800 dark:text-white border border-slate-300 dark:border-[#455A76] shadow-md dark:shadow-none backdrop-blur-md hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
+                >
                   <Calendar className="w-4 h-4 text-[#D79005] dark:text-[#F8D237]" />
-                  {nextMajorEvent.date} ({nextMajorEvent.time})
-                </span>
-                <span className="flex items-center gap-1.5 font-medium">
-                  <MapPin className="w-4 h-4 text-[#D79005] dark:text-[#F8D237]" />
-                  {nextMajorEvent.venue}, {nextMajorEvent.city}
-                </span>
+                  <span>View Event Calendar</span>
+                </Link>
+              </div>
+
+              {/* Quick search hint pills */}
+              <div className="pt-2 flex items-center gap-2 flex-wrap text-xs text-slate-500 dark:text-slate-400">
+                <span className="font-semibold text-slate-600 dark:text-slate-400">Popular Searches:</span>
+                <Link to="/events?category=technology" className="px-2.5 py-1 rounded-lg bg-slate-200/70 hover:bg-slate-300 dark:bg-[#2C3C55] dark:hover:bg-[#394D6A] text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors border border-transparent dark:border-[#455A76]/40">
+                  #AI-Summit
+                </Link>
+                <Link to="/events?category=music" className="px-2.5 py-1 rounded-lg bg-slate-200/70 hover:bg-slate-300 dark:bg-[#2C3C55] dark:hover:bg-[#394D6A] text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors border border-transparent dark:border-[#455A76]/40">
+                  #ElectronicMusic
+                </Link>
+                <Link to="/events?category=sports" className="px-2.5 py-1 rounded-lg bg-slate-200/70 hover:bg-slate-300 dark:bg-[#2C3C55] dark:hover:bg-[#394D6A] text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors border border-transparent dark:border-[#455A76]/40">
+                  #CityMarathon
+                </Link>
+                <Link to="/events?category=workshops" className="px-2.5 py-1 rounded-lg bg-slate-200/70 hover:bg-slate-300 dark:bg-[#2C3C55] dark:hover:bg-[#394D6A] text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors border border-transparent dark:border-[#455A76]/40">
+                  #UIDesignSprint
+                </Link>
               </div>
             </div>
 
-            {/* Countdown & CTA */}
-            <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-between gap-6 border-t lg:border-t-0 lg:border-l border-slate-200 dark:border-[#455A76] pt-6 lg:pt-0 lg:pl-8">
-              <CountdownTimer
-                targetDate={nextMajorEvent.countdownTarget}
-                label="Countdown to Kickoff"
-              />
+            {/* Right Column (5 cols): Adjacent Countdown Card */}
+            <div className="lg:col-span-5 w-full">
+              <div className="relative rounded-3xl overflow-hidden border border-amber-300/60 dark:border-[#455A76] bg-white/95 dark:bg-[#1E2B3E]/95 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-[#F2B006]/70">
+                {/* Accent top gradient line */}
+                <div className="h-1.5 w-full bg-gradient-to-r from-[#D79005] via-[#F2B006] to-[#F8D237]" />
 
-              <div className="flex items-center gap-3 w-full sm:w-auto">
-                <Link
-                  to={`/events/${nextMajorEvent.id}/register`}
-                  className="flex-1 sm:flex-none px-6 py-3 rounded-xl font-bold text-sm bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] shadow-lg shadow-[#F2B006]/25 transition-all text-center"
-                >
-                  Reserve Your Seat
-                </Link>
-                <Link
-                  to={`/events/${nextMajorEvent.id}`}
-                  className="px-4 py-3 rounded-xl font-bold text-sm bg-slate-100 dark:bg-[#394D6A] hover:bg-slate-200 dark:hover:bg-[#455A76] text-slate-800 dark:text-white border border-slate-200 dark:border-[#455A76] transition-all text-center"
-                >
-                  Event Details
-                </Link>
+                {/* Event Image Banner with Overlay */}
+                <div className="relative aspect-[16/9] overflow-hidden bg-slate-900">
+                  <img
+                    src={nextMajorEvent.image}
+                    alt={nextMajorEvent.title}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                  
+                  <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[#F8D237] text-xs font-bold uppercase tracking-wider border border-white/10">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                    Next Flagship Gathering
+                  </div>
+                  <span className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-extrabold bg-[#F2B006] text-[#121B28] shadow-md">
+                    {nextMajorEvent.price}
+                  </span>
+                  
+                  <div className="absolute bottom-3 left-3 right-3 text-white">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-[#F8D237]">
+                      {nextMajorEvent.category}
+                    </span>
+                    <h3 className="font-extrabold text-lg sm:text-xl font-['Outfit'] leading-tight drop-shadow-sm">
+                      {nextMajorEvent.title}
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Card Content & Countdown */}
+                <div className="p-5 sm:p-6 space-y-5">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
+                    {nextMajorEvent.shortDescription}
+                  </p>
+
+                  <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600 dark:text-slate-300 border-y border-slate-100 dark:border-[#455A76]/50 py-3">
+                    <span className="flex items-center gap-1.5 font-medium">
+                      <Calendar className="w-3.5 h-3.5 text-[#D79005] dark:text-[#F8D237]" />
+                      {nextMajorEvent.date} ({nextMajorEvent.time})
+                    </span>
+                    <span className="flex items-center gap-1.5 font-medium truncate max-w-[200px]" title={`${nextMajorEvent.venue}, ${nextMajorEvent.city}`}>
+                      <MapPin className="w-3.5 h-3.5 text-[#D79005] dark:text-[#F8D237]" />
+                      {nextMajorEvent.venue}
+                    </span>
+                  </div>
+
+                  {/* Centered Live Countdown Timer */}
+                  <div className="bg-slate-50 dark:bg-[#121B28]/60 p-4 rounded-2xl border border-slate-200/80 dark:border-[#455A76]/40 flex flex-col items-center">
+                    <CountdownTimer
+                      targetDate={nextMajorEvent.countdownTarget}
+                      label="Countdown to Kickoff"
+                    />
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="grid grid-cols-2 gap-3 pt-1">
+                    <Link
+                      to={`/events/${nextMajorEvent.id}/register`}
+                      className="py-3 px-4 rounded-xl font-bold text-xs bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] shadow-md shadow-[#F2B006]/20 transition-all text-center flex items-center justify-center"
+                    >
+                      Reserve Pass
+                    </Link>
+                    <Link
+                      to={`/events/${nextMajorEvent.id}`}
+                      className="py-3 px-4 rounded-xl font-bold text-xs bg-slate-100 dark:bg-[#394D6A] hover:bg-slate-200 dark:hover:bg-[#455A76] text-slate-800 dark:text-white border border-slate-200 dark:border-[#455A76] transition-all text-center flex items-center justify-center"
+                    >
+                      Event Details
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
