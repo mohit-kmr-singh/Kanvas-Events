@@ -14,35 +14,36 @@ The platform operates entirely in the browser using React component-based archit
 
 ## 🌟 Key Highlights & Design Philosophy
 
-- **Cinematic Dark & Light Modes**: Styled with Electric Purple (`#8055FF`), deep Charcoal (`#101116`), surface cards (`#20212A`), and off-white typography (`#F4F2EE`).
-- **Zero-Friction Client-Side Storage**: Event registrations, saved wishlist items, theme settings, and demo user sessions persist seamlessly across browser refreshes via the Local Storage API.
+- **Cinematic Dark & Light Modes**: Styled with Slate & Gold palette—Deep Navy/Slate (`#121B28`, `#2C3C55`), Warm Gold/Amber (`#D79005`, `#F2B006`, `#F8D237`), and Clean Off-White (`#FDFBF7`) with persistent theme toggle and zero-flash initialization.
+- **Zero-Friction Client-Side Storage**: Event registrations, saved wishlist items, theme settings, and user sessions persist seamlessly across browser refreshes via the Local Storage API.
 - **Dynamic QR Code Ticket Generation**: Instant verifiable admission passes rendered in-browser using `qrcode`, with formatted print styles (`@media print`) and PDF save capabilities.
-- **Interactive Multi-Filter & Search**: Full-text keyword search across titles, keynotes, venues, cities, and tags with category pills, date filters, price toggles, and multi-mode sorting.
-- **Micro-Interactions & Animation**: Real-time event countdown timers, celebration confetti blasts (`canvas-confetti`), toast notifications, interactive FAQ accordions, and responsive view toggles (Grid vs. List).
+- **Interactive Multi-Filter & Search**: Full-text keyword search across titles, keynotes, venues, cities, and tags with category pills, campus location dropdowns, Indian Rupee (`₹`) price filter, and multi-mode sorting.
+- **Micro-Interactions & Animation**: Real-time event countdown timers, celebration confetti blasts (`canvas-confetti`), toast notifications, and responsive view toggles (Grid vs. List).
 
 ---
 
 ## 🚀 Complete Website Features (By Module)
 
 ### 📌 Module 1 – Homepage
-- **Sticky Navigation Bar**: Kanvas Events branding mark, links (*Home, Events, Calendar, About, Contact, My Registrations*), active indicator, wishlist counter badge, theme toggle, and responsive mobile drawer.
-- **Cinematic Hero Section**: Ambient purple lighting orbs, headline *"Every Event Has a Story."*, supporting description, primary *Explore Events* and *Event Calendar* CTAs, plus popular search tag pills.
-- **Next Big Event Countdown**: Featured countdown banner highlighting the flagship upcoming convention with live days, hours, minutes, and seconds countdown ticking every second.
-- **Platform Statistics**: Animated metric cards displaying upcoming events, 25,000+ community attendees, 6+ categories, and 12+ metro locations.
+- **Sticky Navigation Bar**: Official Kanvas Events 3D logo branding, links (*Home, Events, Calendar, Contact, My Registrations*), active indicator, wishlist counter badge, and theme toggle.
+- **Side-by-Side Hero & Flagship Countdown**:
+  - **Left Column**: Introductory branding with badge pill, headline *"Every Event Has a Story."*, platform description, primary *Explore Events* and *Event Calendar* CTAs, plus popular search tag pills.
+  - **Right Column**: Adjacent **Next Flagship Gathering** preview card featuring high-resolution banner, campus location, event time, live ticking days/hours/minutes/seconds `CountdownTimer`, and direct pass reservation actions.
+- **Platform Statistics**: Animated metric cards displaying upcoming events, 25,000+ community attendees, 6+ categories, and 25+ campus venues.
 - **Explore by Category**: Interactive category cards with curated icons, event counts, and direct deep-linking for *Technology, Music, Cultural, Sports, Workshops,* and *Seminars*.
-- **Featured Events Section**: Highlighted 4-card grid with image hover zoom, category badges, price tags, attendance capacity, and wishlist quick-action.
+- **Featured Events Section**: Highlighted 4-card grid with image hover zoom, category badges, price tags in Rupee (`₹`), attendance capacity, and wishlist quick-action.
 - **The Kanvas Advantage**: Value proposition breakdown (*Seamless Digital Booking, Dynamic QR-Code Passes, Curated High-Value Gatherings, Personalized Discovery*).
 - **Upcoming Experiences Preview**: Additional curated event cards.
 - **Promotional CTA Banner**: High-impact gradient card for attendees and event hosts.
-- **Footer**: Brand tagline, social media links, platform navigation, category directory, working newsletter subscription with validation, and privacy notice.
+- **Footer**: Brand logo and tagline, platform navigation, direct support channels, and encrypted local storage status.
 
 ### 📌 Module 2 – Explore Events (`/events`)
 - **Full Directory Display**: Access all curated events in one responsive interface.
-- **Live Search**: Instant keyword filtering across event titles, short descriptions, venue names, cities, and tags with a one-click clear button.
+- **Live Search**: Instant keyword filtering across event titles, short descriptions, venue names, campuses, and tags with a one-click clear button.
 - **Multi-Filter System**:
   - Filter by Category (*All, Technology, Music, Cultural, Sports, Workshops, Seminars*).
-  - Filter by Location (*All Cities, San Francisco, Brooklyn, Chicago, Seattle, Austin, Boston, San Jose, Denver, Los Angeles*).
-  - Filter by Price (*All, Free Only, Paid Only*).
+  - Filter by Campus Location (*All KIIT Campuses from Campus 1 to Campus 25, Bhubaneswar, Odisha*).
+  - Filter by Price with Indian Rupee icon (`₹` / `IndianRupee`): (*All Pricing, Free Events Only, Paid Events*).
   - Filter by Featured status (*Featured Only* toggle).
 - **Multi-Option Sorting**:
   - Date: Soonest First / Latest First
@@ -68,17 +69,13 @@ The platform operates entirely in the browser using React component-based archit
 - **Related & Recommended Events**: Curated event suggestions from the same category.
 
 ### 📌 Module 4 – Event Registration (`/events/:id/register`)
-- **Attendee Form**:
-  - Full Name (required, validation for min 3 characters, alphabetic characters).
-  - Email Address (required, RFC email regex validation).
-  - Phone Number (required, minimum 10 digits validation).
-  - Pass Tier Selection (General Admission, VIP Access Pass, Early Supporter).
-  - Special Requests / Notes (dietary, accessibility preferences).
-  - Terms & Conditions agreement checkbox.
+- **Streamlined Attendee Form**:
+  - Full Name (`placeholder="e.g. Mohit Kumar"`, required, validation for min 3 characters).
+  - Email Address (`placeholder="e.g. mohit@example.com"`, required, RFC email regex validation).
+  - Phone Number (`placeholder="e.g. 1234567890"`, required, minimum 10 digits validation).
 - **Duplicate Registration Prevention**: Automatically verifies Local Storage records for matching `eventId` and `email` combinations; alerts user with an existing registration notice and direct link to their confirmed pass.
-- **Auto-Fill Integration**: Automatically prefills name and email if the user is authenticated via the demo account.
 - **Live Error Feedback**: Contextual inline error messages beneath form fields and global toast alert dispatch.
-- **Selected Event Summary Card**: Visual summary of the event being registered for.
+- **Selected Event Summary Card**: Visual summary of the event being registered for with venue and schedule breakdown.
 
 ### 📌 Module 5 – Registration Management
 - **Registration Success Page (`/registration-success`)**:
@@ -94,17 +91,12 @@ The platform operates entirely in the browser using React component-based archit
   - "Cancel Registration" functionality with safety confirmation modal.
   - Empty state with direct "Discover Events" action button.
 
-### 📌 Module 6 – About Us & Contact Pages
-- **About Us (`/about`)**:
-  - Platform founding story, mission, and vision statements.
-  - Core values (*Curated Excellence, Effortless Accessibility, Privacy By Default, Passionate Communities*).
-  - Meet the Leadership Team profiles.
-- **Contact Us (`/contact`)**:
-  - Contact form with name, email, subject, and message inputs.
-  - Client-side validation ensuring valid format and minimum message lengths.
-  - Confirmation alert with frontend demonstration limitation disclosure.
-  - Direct contact channels (phone, email, headquarters address, operating hours).
-  - Interactive FAQ accordion answering the 6 most common questions.
+### 📌 Module 6 – Contact & Support
+- **Contact Page (`/contact`)**:
+  - Direct inquiry channels:
+    - **Email Support**: `mohitkumar784870@gmail.com`
+    - **Phone Enquiries**: `+91 7903176833`
+  - Client-side support notice and direct access to event registration management.
 
 ### 📌 Module 7 & 8 – Bonus Features & UI/UX Polish
 - **Event Wishlist (`/wishlist`)**: Save favorite events with instant heart toggle, header count badge, and dedicated wishlist gallery.
@@ -250,6 +242,16 @@ This application is ready for one-click deployment on **Vercel** or **Netlify**:
    - **Publish Directory**: `dist`
 4. Add a `public/_redirects` file containing `/* /index.html 200` for client-side routing.
 5. Click **Deploy Site**.
+
+---
+
+## 📌 Latest Commit Summary
+
+- **Commit**: `7fc15f5`
+- **Commit Message**: `placed countdown dide by side with introductory page`
+- **Key Updates**:
+  - **Hero & Flagship Event Side-by-Side (`src/pages/Home.jsx`)**: Refactored the homepage hero section from a centered single column into a 2-column layout (`grid grid-cols-1 lg:grid-cols-12`). The left column (7 cols) displays the introductory headline, description, CTAs, and popular search tags, while the right column (5 cols) embeds the live **Next Flagship Gathering** countdown banner card with real-time countdown, date/venue info, and booking buttons side by side.
+  - **Rupee Pricing Filter (`src/pages/ExploreEvents.jsx`)**: Updated the event directory filter dropdown, replacing the dollar icon with the Lucide `<IndianRupee>` icon (`₹`) aligned with the dropdown chevron and themed with the amber/gold palette.
 
 ---
 
