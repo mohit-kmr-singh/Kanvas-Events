@@ -65,14 +65,14 @@ export default function About() {
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-20">
       {/* Hero Section */}
       <section className="text-center space-y-6 max-w-4xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/30 text-[#8055FF] dark:text-purple-300 text-xs font-semibold">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F2B006]/15 border border-[#F2B006]/30 text-[#D79005] dark:text-[#F8D237] text-xs font-semibold">
           <Sparkles className="w-4 h-4" />
           <span>Our Story & Purpose</span>
         </div>
 
         <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-900 dark:text-white font-['Outfit'] tracking-tight leading-tight">
           Where Remarkable Gatherings <br />
-          <span className="bg-gradient-to-r from-[#8055FF] via-purple-400 to-indigo-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#D79005] via-[#F2B006] to-[#F8D237] bg-clip-text text-transparent">
             Find Their People.
           </span>
         </h1>
@@ -84,8 +84,8 @@ export default function About() {
 
       {/* Mission & Vision Cards */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-purple-100/70 via-white to-purple-50/50 dark:from-purple-900/20 dark:via-purple-900/10 dark:to-[#1a1b24] border border-purple-200 dark:border-purple-500/30 shadow-xl space-y-4">
-          <div className="w-12 h-12 rounded-2xl bg-[#8055FF]/10 dark:bg-[#8055FF]/20 text-[#8055FF] flex items-center justify-center">
+        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-amber-100/70 via-white to-amber-50/50 dark:from-[#2C3C55] dark:via-[#1E2B3E] dark:to-[#121B28] border border-amber-200 dark:border-[#455A76] shadow-xl space-y-4">
+          <div className="w-12 h-12 rounded-2xl bg-[#F2B006]/15 text-[#D79005] dark:text-[#F8D237] flex items-center justify-center">
             <Target className="w-6 h-6" />
           </div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white font-['Outfit']">
@@ -96,8 +96,8 @@ export default function About() {
           </p>
         </div>
 
-        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-indigo-100/70 via-white to-indigo-50/50 dark:from-indigo-900/20 dark:via-indigo-900/10 dark:to-[#1a1b24] border border-indigo-200 dark:border-indigo-500/30 shadow-xl space-y-4">
-          <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
+        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-amber-100/50 via-white to-amber-50/30 dark:from-[#2C3C55] dark:via-[#1E2B3E] dark:to-[#121B28] border border-amber-200 dark:border-[#455A76] shadow-xl space-y-4">
+          <div className="w-12 h-12 rounded-2xl bg-[#F2B006]/15 text-[#D79005] dark:text-[#F8D237] flex items-center justify-center">
             <Eye className="w-6 h-6" />
           </div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white font-['Outfit']">
@@ -112,7 +112,7 @@ export default function About() {
       {/* Core Values */}
       <section className="space-y-10">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#8055FF]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#D79005] dark:text-[#F8D237]">
             What We Stand For
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-['Outfit']">
@@ -124,9 +124,9 @@ export default function About() {
           {values.map((val) => (
             <div
               key={val.title}
-              className="p-6 rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 shadow-lg space-y-3"
+              className="p-6 rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] shadow-lg space-y-3"
             >
-              <div className="w-12 h-12 rounded-2xl bg-[#8055FF]/10 text-[#8055FF] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-2xl bg-[#F2B006]/15 text-[#D79005] dark:text-[#F8D237] flex items-center justify-center">
                 <val.icon className="w-6 h-6" />
               </div>
               <h3 className="font-bold text-lg text-slate-900 dark:text-white">
@@ -143,7 +143,7 @@ export default function About() {
       {/* Leadership Team */}
       <section className="space-y-10">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#8055FF]">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#D79005] dark:text-[#F8D237]">
             The People Behind Kanvas
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-['Outfit']">
@@ -155,7 +155,7 @@ export default function About() {
           {team.map((member) => (
             <div
               key={member.name}
-              className="group rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 overflow-hidden shadow-lg hover:border-[#8055FF]/50 transition-all duration-300"
+              className="group rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] overflow-hidden shadow-lg hover:border-[#F2B006]/50 transition-all duration-300"
             >
               <div className="aspect-square overflow-hidden bg-slate-900">
                 <img
@@ -168,7 +168,7 @@ export default function About() {
                 <h3 className="font-bold text-base text-slate-900 dark:text-white">
                   {member.name}
                 </h3>
-                <p className="text-xs font-semibold text-[#8055FF]">
+                <p className="text-xs font-semibold text-[#D79005] dark:text-[#F8D237]">
                   {member.role}
                 </p>
                 <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed pt-1">
@@ -181,17 +181,17 @@ export default function About() {
       </section>
 
       {/* CTA Bottom */}
-      <section className="rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-[#8055FF] to-purple-800 text-white text-center space-y-6 shadow-2xl">
+      <section className="rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-[#121B28] via-[#2C3C55] to-[#121B28] border border-[#F2B006]/40 text-white text-center space-y-6 shadow-2xl">
         <h2 className="text-2xl sm:text-4xl font-extrabold font-['Outfit']">
           Ready to Explore What’s Next?
         </h2>
-        <p className="text-purple-100 max-w-xl mx-auto text-sm sm:text-base">
+        <p className="text-slate-200 max-w-xl mx-auto text-sm sm:text-base">
           Join thousands of attendees discovering cutting-edge conferences, intimate workshops, and electrifying live events.
         </p>
         <div>
           <Link
             to="/events"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white text-purple-900 hover:bg-slate-100 font-extrabold text-xs uppercase tracking-wider shadow-lg transition-all"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] font-extrabold text-xs uppercase tracking-wider shadow-lg transition-all"
           >
             <span>Explore Events Now</span>
             <ArrowRight className="w-4 h-4" />

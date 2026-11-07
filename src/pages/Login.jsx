@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Sparkles, Mail, Lock, LogIn, CheckCircle2 } from 'lucide-react';
+import { Mail, Lock, LogIn, CheckCircle2 } from 'lucide-react';
 import { validateEmail } from '../utils/validation';
 import { useAuth } from '../context/AuthContext';
 
@@ -33,11 +33,13 @@ export default function Login() {
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 p-8 rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 shadow-2xl">
+      <div className="max-w-md w-full space-y-8 p-8 rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] shadow-2xl">
         <div className="text-center space-y-2">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#8055FF] to-indigo-600 flex items-center justify-center mx-auto shadow-lg shadow-[#8055FF]/25">
-            <Sparkles className="w-6 h-6 text-white" />
-          </div>
+          <img
+            src="/logo.png"
+            alt="Kanvas Events Logo"
+            className="w-16 h-16 object-contain mx-auto drop-shadow-md"
+          />
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-['Outfit']">
             Welcome Back
           </h2>
@@ -47,12 +49,12 @@ export default function Login() {
         </div>
 
         {/* Demo Credentials Helper Pill */}
-        <div className="p-3.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs text-purple-800 dark:text-purple-200 space-y-1">
+        <div className="p-3.5 rounded-xl bg-[#F2B006]/15 border border-[#F2B006]/30 text-xs text-[#D79005] dark:text-[#F8D237] space-y-1">
           <div className="font-bold flex items-center gap-1.5">
-            <CheckCircle2 className="w-3.5 h-3.5 text-[#8055FF]" />
+            <CheckCircle2 className="w-3.5 h-3.5 text-[#D79005] dark:text-[#F8D237]" />
             <span>Interactive Demo Credentials Pre-loaded</span>
           </div>
-          <p className="text-[11px] opacity-80">
+          <p className="text-[11px] opacity-80 text-slate-700 dark:text-slate-300">
             Email: <code className="font-mono font-bold">attendee@kanvasevents.com</code> • Password: <code className="font-mono font-bold">demo1234</code>
           </p>
         </div>
@@ -68,7 +70,7 @@ export default function Login() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-[#171822] text-sm text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 focus:outline-none focus:border-[#8055FF]"
+                className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-[#1E2B3E] text-sm text-slate-900 dark:text-white border border-slate-200 dark:border-[#455A76] focus:outline-none focus:border-[#F2B006]"
                 required
               />
             </div>
@@ -85,7 +87,7 @@ export default function Login() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-[#171822] text-sm text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 focus:outline-none focus:border-[#8055FF]"
+                className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-[#1E2B3E] text-sm text-slate-900 dark:text-white border border-slate-200 dark:border-[#455A76] focus:outline-none focus:border-[#F2B006]"
                 required
               />
             </div>
@@ -94,7 +96,7 @@ export default function Login() {
 
           <button
             type="submit"
-            className="w-full py-3.5 rounded-xl font-bold text-sm bg-[#8055FF] hover:bg-[#6c40f5] text-white shadow-xl shadow-[#8055FF]/30 transition-all flex items-center justify-center gap-2"
+            className="w-full py-3.5 rounded-xl font-bold text-sm bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] shadow-xl shadow-[#F2B006]/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
             <LogIn className="w-4 h-4" />
             <span>Sign In to Kanvas</span>
@@ -103,7 +105,7 @@ export default function Login() {
 
         <div className="text-center text-xs text-slate-500">
           <span>Don't have an account yet? </span>
-          <Link to="/signup" className="text-[#8055FF] font-bold hover:underline">
+          <Link to="/signup" className="text-[#D79005] dark:text-[#F8D237] font-bold hover:underline">
             Create an account
           </Link>
         </div>

@@ -50,7 +50,7 @@ export default function EventDetails() {
         </p>
         <Link
           to="/events"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#8055FF] text-white font-bold text-sm"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] font-bold text-sm shadow-md"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to All Events</span>
@@ -114,25 +114,25 @@ export default function EventDetails() {
           alt={event.title}
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-slate-900/60 to-black/50 dark:from-[#101116] dark:via-[#101116]/80 dark:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-100 via-slate-900/60 to-black/50 dark:from-[#121B28] dark:via-[#121B28]/85 dark:to-transparent" />
         <div className="absolute inset-0 bg-black/20 dark:bg-black/40" />
 
         <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-10">
           {/* Breadcrumbs */}
           <nav className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-6 flex-wrap">
-            <Link to="/" className="hover:text-[#8055FF] dark:hover:text-white transition-colors">
+            <Link to="/" className="hover:text-[#D79005] dark:hover:text-[#F8D237] transition-colors">
               Home
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
-            <Link to="/events" className="hover:text-[#8055FF] dark:hover:text-white transition-colors">
+            <Link to="/events" className="hover:text-[#D79005] dark:hover:text-[#F8D237] transition-colors">
               Events
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
-            <span className="text-[#8055FF] max-w-[200px] truncate">{event.title}</span>
+            <span className="text-[#D79005] dark:text-[#F8D237] max-w-[200px] truncate">{event.title}</span>
           </nav>
 
           <div className="flex flex-wrap items-center gap-2.5 mb-4">
-            <span className="px-3 py-1 rounded-lg text-xs font-extrabold uppercase tracking-wider bg-[#8055FF] text-white">
+            <span className="px-3 py-1 rounded-lg text-xs font-extrabold uppercase tracking-wider bg-[#F2B006] text-[#121B28]">
               {event.category}
             </span>
             {event.featured && (
@@ -155,15 +155,15 @@ export default function EventDetails() {
 
           <div className="flex flex-wrap items-center gap-6 text-sm text-slate-700 dark:text-slate-300 mt-4">
             <span className="flex items-center gap-1.5 font-medium">
-              <Calendar className="w-4 h-4 text-[#8055FF]" />
+              <Calendar className="w-4 h-4 text-[#D79005] dark:text-[#F8D237]" />
               {formattedDate}
             </span>
             <span className="flex items-center gap-1.5 font-medium">
-              <Clock className="w-4 h-4 text-[#8055FF]" />
+              <Clock className="w-4 h-4 text-[#D79005] dark:text-[#F8D237]" />
               {event.time}
             </span>
             <span className="flex items-center gap-1.5 font-medium">
-              <MapPin className="w-4 h-4 text-[#8055FF]" />
+              <MapPin className="w-4 h-4 text-[#D79005] dark:text-[#F8D237]" />
               {event.venue}, {event.city}
             </span>
           </div>
@@ -178,7 +178,7 @@ export default function EventDetails() {
           {/* Left Column (8 cols): Event Overview, Highlights, Schedule */}
           <div className="lg:col-span-8 space-y-10">
             {/* About the Event */}
-            <section className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 shadow-lg space-y-4">
+            <section className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] shadow-lg space-y-4">
               <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white font-['Outfit']">
                 About This Event
               </h2>
@@ -188,12 +188,12 @@ export default function EventDetails() {
 
               {/* Tags */}
               {event.tags && event.tags.length > 0 && (
-                <div className="pt-4 border-t border-slate-100 dark:border-white/10 flex flex-wrap items-center gap-2">
+                <div className="pt-4 border-t border-slate-100 dark:border-[#455A76]/50 flex flex-wrap items-center gap-2">
                   <span className="text-xs font-semibold text-slate-400">Tags:</span>
                   {event.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/10"
+                      className="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-[#1E2B3E] text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-[#455A76]"
                     >
                       #{tag}
                     </span>
@@ -204,8 +204,8 @@ export default function EventDetails() {
 
             {/* Event Highlights */}
             {event.highlights && event.highlights.length > 0 && (
-              <section className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 shadow-lg space-y-4">
-                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#8055FF]">
+              <section className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] shadow-lg space-y-4">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#D79005] dark:text-[#F8D237]">
                   <Sparkles className="w-4 h-4" />
                   <span>Key Experience Points</span>
                 </div>
@@ -216,9 +216,9 @@ export default function EventDetails() {
                   {event.highlights.map((highlight, index) => (
                     <div
                       key={index}
-                      className="flex items-start gap-3 p-4 rounded-2xl bg-purple-500/5 dark:bg-purple-500/10 border border-purple-500/20"
+                      className="flex items-start gap-3 p-4 rounded-2xl bg-[#F2B006]/10 dark:bg-[#F2B006]/10 border border-[#F2B006]/25"
                     >
-                      <CheckCircle className="w-5 h-5 text-[#8055FF] shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-[#D79005] dark:text-[#F8D237] shrink-0 mt-0.5" />
                       <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 font-medium leading-relaxed">
                         {highlight}
                       </p>
@@ -230,9 +230,9 @@ export default function EventDetails() {
 
             {/* Event Schedule / Agenda */}
             {event.schedule && event.schedule.length > 0 && (
-              <section className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 shadow-lg space-y-6">
+              <section className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] shadow-lg space-y-6">
                 <div>
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#8055FF]">
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#D79005] dark:text-[#F8D237]">
                     <Clock className="w-4 h-4" />
                     <span>Run of Show</span>
                   </div>
@@ -241,14 +241,14 @@ export default function EventDetails() {
                   </h2>
                 </div>
 
-                <div className="relative pl-6 sm:pl-8 border-l-2 border-purple-500/30 space-y-6">
+                <div className="relative pl-6 sm:pl-8 border-l-2 border-[#F2B006]/40 space-y-6">
                   {event.schedule.map((item, idx) => (
                     <div key={idx} className="relative group">
                       {/* Timeline dot */}
-                      <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#8055FF] border-4 border-white dark:border-[#20212A]" />
+                      <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#F2B006] border-4 border-white dark:border-[#2C3C55]" />
 
-                      <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#171822] border border-slate-200 dark:border-white/10 space-y-1">
-                        <span className="text-xs font-mono font-bold text-[#8055FF]">
+                      <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#1E2B3E] border border-slate-200 dark:border-[#455A76] space-y-1">
+                        <span className="text-xs font-mono font-bold text-[#D79005] dark:text-[#F8D237]">
                           {item.time}
                         </span>
                         <h4 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
@@ -268,15 +268,15 @@ export default function EventDetails() {
 
             {/* Organizer Info */}
             {event.organizer && (
-              <section className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 shadow-lg">
+              <section className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] shadow-lg">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
                   <img
                     src={event.organizer.avatar}
                     alt={event.organizer.name}
-                    className="w-16 h-16 rounded-2xl object-cover ring-2 ring-[#8055FF]/30"
+                    className="w-16 h-16 rounded-2xl object-cover ring-2 ring-[#F2B006]/50"
                   />
                   <div className="space-y-1">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#8055FF]">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#D79005] dark:text-[#F8D237]">
                       Presented By
                     </span>
                     <h3 className="text-xl font-bold text-slate-900 dark:text-white">
@@ -298,9 +298,9 @@ export default function EventDetails() {
           <div className="lg:col-span-4 space-y-6">
             <div className="sticky top-28 space-y-6">
               {/* Registration Card */}
-              <div className="p-6 sm:p-7 rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 shadow-2xl space-y-6">
+              <div className="p-6 sm:p-7 rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] shadow-2xl space-y-6">
                 {/* Price & Status */}
-                <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-white/10">
+                <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-[#455A76]/50">
                   <div>
                     <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
                       Registration Pass
@@ -322,7 +322,7 @@ export default function EventDetails() {
                 </div>
 
                 {/* Countdown Timer */}
-                <div className="pb-4 border-b border-slate-100 dark:border-white/10">
+                <div className="pb-4 border-b border-slate-100 dark:border-[#455A76]/50">
                   <CountdownTimer
                     targetDate={event.countdownTarget || `${event.date}T09:00:00`}
                     label="Event Countdown"
@@ -334,16 +334,16 @@ export default function EventDetails() {
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-xs font-semibold">
                     <span className="text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                      <Users className="w-3.5 h-3.5 text-[#8055FF]" />
+                      <Users className="w-3.5 h-3.5 text-[#D79005] dark:text-[#F8D237]" />
                       Seat Capacity
                     </span>
                     <span className="text-slate-900 dark:text-white">
                       {event.registeredCount} / {event.totalSeats} ({seatsLeft} left)
                     </span>
                   </div>
-                  <div className="w-full h-2 rounded-full bg-slate-100 dark:bg-white/10 overflow-hidden">
+                  <div className="w-full h-2 rounded-full bg-slate-100 dark:bg-[#121B28]/60 overflow-hidden">
                     <div
-                      className="h-full rounded-full bg-gradient-to-r from-[#8055FF] to-purple-400"
+                      className="h-full rounded-full bg-gradient-to-r from-[#D79005] to-[#F2B006]"
                       style={{ width: `${Math.min(100, (event.registeredCount / event.totalSeats) * 100)}%` }}
                     />
                   </div>
@@ -361,7 +361,7 @@ export default function EventDetails() {
                   ) : (
                     <Link
                       to={`/events/${event.id}/register`}
-                      className="w-full py-4 rounded-2xl font-bold text-sm bg-[#8055FF] hover:bg-[#6c40f5] text-white shadow-xl shadow-[#8055FF]/30 hover:shadow-2xl hover:shadow-[#8055FF]/40 transition-all text-center flex items-center justify-center gap-2 group"
+                      className="w-full py-4 rounded-2xl font-bold text-sm bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] shadow-xl shadow-[#F2B006]/25 hover:shadow-2xl transition-all text-center flex items-center justify-center gap-2 group"
                     >
                       <Ticket className="w-4 h-4 group-hover:rotate-12 transition-transform" />
                       <span>Register for Event</span>
@@ -375,7 +375,7 @@ export default function EventDetails() {
                       className={`py-3 px-4 rounded-xl text-xs font-bold border transition-colors flex items-center justify-center gap-2 ${
                         wishlisted
                           ? 'bg-rose-500/10 text-rose-500 border-rose-500/30'
-                          : 'bg-slate-50 dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-300 hover:text-rose-500'
+                          : 'bg-slate-50 dark:bg-[#1E2B3E] border-slate-200 dark:border-[#455A76] text-slate-700 dark:text-slate-300 hover:text-rose-500'
                       }`}
                     >
                       <Heart className={`w-4 h-4 ${wishlisted ? 'fill-current' : ''}`} />
@@ -385,7 +385,7 @@ export default function EventDetails() {
                     <button
                       onClick={handleShare}
                       type="button"
-                      className="py-3 px-4 rounded-xl text-xs font-bold border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:text-[#8055FF] transition-colors flex items-center justify-center gap-2"
+                      className="py-3 px-4 rounded-xl text-xs font-bold border border-slate-200 dark:border-[#455A76] bg-slate-50 dark:bg-[#1E2B3E] text-slate-700 dark:text-slate-300 hover:text-[#D79005] dark:hover:text-[#F8D237] transition-colors flex items-center justify-center gap-2"
                     >
                       <Share2 className="w-4 h-4" />
                       <span>Share Event</span>
@@ -401,21 +401,21 @@ export default function EventDetails() {
               </div>
 
               {/* Venue & Location Preview Card */}
-              <div className="p-6 rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 shadow-lg space-y-3">
+              <div className="p-6 rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] shadow-lg space-y-3">
                 <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-[#8055FF]" />
+                  <MapPin className="w-4 h-4 text-[#D79005] dark:text-[#F8D237]" />
                   <span>Venue Information</span>
                 </h3>
                 <p className="text-sm font-bold text-slate-800 dark:text-slate-200">
                   {event.venue}
                 </p>
                 <p className="text-xs text-slate-500 dark:text-slate-400">
-                  {event.city} • United States
+                  {event.city} • India
                 </p>
                 {/* Mock Interactive Map styling */}
-                <div className="relative h-28 rounded-xl overflow-hidden bg-slate-800 border border-slate-700 flex items-center justify-center">
+                <div className="relative h-28 rounded-xl overflow-hidden bg-[#121B28] border border-[#455A76] flex items-center justify-center">
                   <div className="text-center space-y-1">
-                    <MapPin className="w-6 h-6 text-[#8055FF] mx-auto animate-bounce" />
+                    <MapPin className="w-6 h-6 text-[#F2B006] mx-auto animate-bounce" />
                     <span className="text-[11px] text-slate-300 font-mono">
                       {event.venue}
                     </span>
@@ -430,10 +430,10 @@ export default function EventDetails() {
         {/* RELATED & RECOMMENDED EVENTS                             */}
         {/* ======================================================== */}
         {relatedEvents.length > 0 && (
-          <section className="mt-20 pt-12 border-t border-slate-200 dark:border-white/10">
+          <section className="mt-20 pt-12 border-t border-slate-200 dark:border-[#455A76]">
             <div className="flex items-center justify-between mb-8">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#8055FF]">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#D79005] dark:text-[#F8D237]">
                   More to Discover
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-['Outfit'] mt-1">
@@ -442,7 +442,7 @@ export default function EventDetails() {
               </div>
               <Link
                 to={`/events?category=${event.category}`}
-                className="text-xs font-bold text-[#8055FF] dark:text-purple-400 hover:underline"
+                className="text-xs font-bold text-[#D79005] dark:text-[#F8D237] hover:underline"
               >
                 View Category →
               </Link>

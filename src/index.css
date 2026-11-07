@@ -2,53 +2,68 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --color-slate-950: #121B28;
+  --color-slate-900: #121B28;
+  --color-slate-800: #2C3C55;
+  --color-slate-700: #394D6A;
+  --color-slate-600: #455A76;
+
+  --color-amber-500: #F2B006;
+  --color-amber-600: #D79005;
+  --color-amber-400: #F8D237;
+}
+
 @layer base {
   :root {
-    --bg-main: #f8fafc;
-    --card-main: #ffffff;
-    --text-main: #0f172a;
-    --text-muted: #64748b;
-    --border-main: #e2e8f0;
-    --primary: #8055FF;
-    --primary-hover: #6e40f7;
+    --bg-main: #FDFBF7;
+    --card-main: #FFFFFF;
+    --card-border: #E8E5DF;
+    --text-main: #121B28;
+    --text-muted: #455A76;
+    --primary: #F2B006;
+    --primary-hover: #D79005;
+    --primary-light: #F8D237;
   }
 
   .dark {
-    --bg-main: #101116;
-    --card-main: #20212A;
+    --bg-main: #121B28;
+    --card-main: #2C3C55;
+    --card-elevated: #394D6A;
+    --card-border: #455A76;
     --text-main: #F4F2EE;
-    --text-muted: #9ca3af;
-    --border-main: #2c2e3b;
-    --primary: #8055FF;
-    --primary-hover: #9773ff;
+    --text-muted: #94A3B8;
+    --primary: #F2B006;
+    --primary-hover: #F8D237;
+    --primary-deep: #D79005;
   }
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background-color: var(--bg-main);
   color: var(--text-main);
   min-height: 100vh;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar with palette gold and slate */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(18, 27, 40, 0.05);
 }
 .dark ::-webkit-scrollbar-track {
-  background: #15161e;
+  background: #121B28;
 }
 ::-webkit-scrollbar-thumb {
-  background: #8055FF55;
+  background: #F2B00688;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #8055FF;
+  background: #F2B006;
 }
 
 /* Print styles for tickets */

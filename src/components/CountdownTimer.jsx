@@ -27,8 +27,8 @@ export default function CountdownTimer({ targetDate, label = 'Starts In', size =
 
   if (timeLeft.ended) {
     return (
-      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-500/10 border border-[#8055FF]/30 text-[#8055FF] text-sm font-semibold">
-        <span className="w-2 h-2 rounded-full bg-[#8055FF] animate-ping" />
+      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#F2B006]/15 border border-[#F2B006]/40 text-[#D79005] dark:text-[#F8D237] text-sm font-bold">
+        <span className="w-2 h-2 rounded-full bg-[#F2B006] animate-ping" />
         Event Live or Concluded
       </div>
     );
@@ -46,7 +46,7 @@ export default function CountdownTimer({ targetDate, label = 'Starts In', size =
   return (
     <div className="flex flex-col items-start gap-2">
       {label && (
-        <span className="text-xs uppercase tracking-wider font-semibold text-[#8055FF] dark:text-purple-400">
+        <span className="text-xs uppercase tracking-wider font-extrabold text-[#D79005] dark:text-[#F8D237]">
           {label}
         </span>
       )}
@@ -56,19 +56,19 @@ export default function CountdownTimer({ targetDate, label = 'Starts In', size =
             <div
               className={`flex flex-col items-center justify-center rounded-xl font-mono border backdrop-blur-md transition-all shadow-md ${
                 isCompact
-                  ? 'min-w-[50px] py-1.5 px-2 bg-purple-500/10 dark:bg-black/50 border-purple-500/20 dark:border-white/10'
-                  : 'min-w-[64px] sm:min-w-[72px] py-2 sm:py-3 px-2 sm:px-3 bg-white/90 dark:bg-[#20212A]/90 border-slate-200 dark:border-white/10'
+                  ? 'min-w-[50px] py-1.5 px-2 bg-[#F2B006]/10 dark:bg-[#121B28] border-[#D79005]/30 dark:border-[#455A76]/50'
+                  : 'min-w-[64px] sm:min-w-[72px] py-2 sm:py-3 px-2 sm:px-3 bg-white/95 dark:bg-[#2C3C55] border-slate-200 dark:border-[#455A76]/60'
               }`}
             >
               <span
-                className={`font-black tracking-tight leading-none ${
-                  isCompact ? 'text-lg sm:text-xl text-[#8055FF] dark:text-purple-300' : 'text-2xl sm:text-3xl text-[#8055FF] dark:text-purple-300'
+                className={`font-black tracking-tight leading-none text-[#D79005] dark:text-[#F8D237] ${
+                  isCompact ? 'text-lg sm:text-xl' : 'text-2xl sm:text-3xl'
                 }`}
               >
                 {String(unit.value).padStart(2, '0')}
               </span>
               <span
-                className={`uppercase tracking-wider font-medium text-slate-500 dark:text-slate-400 ${
+                className={`uppercase tracking-wider font-bold text-slate-500 dark:text-slate-400 ${
                   isCompact ? 'text-[9px] mt-0.5' : 'text-[10px] sm:text-xs mt-1'
                 }`}
               >
@@ -76,7 +76,7 @@ export default function CountdownTimer({ targetDate, label = 'Starts In', size =
               </span>
             </div>
             {idx < units.length - 1 && (
-              <span className="text-slate-400 dark:text-slate-600 font-bold mx-1 text-sm sm:text-base">:</span>
+              <span className="text-slate-400 dark:text-[#455A76] font-bold mx-1 text-sm sm:text-base">:</span>
             )}
           </div>
         ))}

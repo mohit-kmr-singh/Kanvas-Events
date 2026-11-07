@@ -33,7 +33,7 @@ export default function Wishlist() {
 
       {wishlistCount === 0 ? (
         /* Empty State */
-        <div className="p-12 sm:p-20 text-center rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 shadow-xl space-y-5 max-w-lg mx-auto">
+        <div className="p-12 sm:p-20 text-center rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] shadow-xl space-y-5 max-w-lg mx-auto">
           <div className="w-16 h-16 rounded-2xl bg-rose-500/10 text-rose-500 mx-auto flex items-center justify-center">
             <Heart className="w-8 h-8" />
           </div>
@@ -45,7 +45,7 @@ export default function Wishlist() {
           </p>
           <Link
             to="/events"
-            className="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-[#8055FF] hover:bg-[#6c40f5] text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-[#8055FF]/25 transition-all"
+            className="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] font-bold text-xs uppercase tracking-wider shadow-lg shadow-[#F2B006]/20 transition-all"
           >
             <Compass className="w-4 h-4" />
             <span>Explore Events</span>

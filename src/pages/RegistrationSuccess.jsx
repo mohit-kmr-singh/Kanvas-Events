@@ -49,7 +49,7 @@ export default function RegistrationSuccess() {
         </p>
         <Link
           to="/events"
-          className="inline-flex px-6 py-3 rounded-xl bg-[#8055FF] text-white font-bold text-xs"
+          className="inline-flex px-6 py-3 rounded-xl bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] font-bold text-xs shadow-md"
         >
           Explore Events
         </Link>
@@ -85,7 +85,7 @@ export default function RegistrationSuccess() {
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 no-print">
         <Link
           to="/my-registrations"
-          className="w-full sm:w-auto px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-[#8055FF] hover:bg-[#6c40f5] text-white shadow-xl shadow-[#8055FF]/25 flex items-center justify-center gap-2"
+          className="w-full sm:w-auto px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] shadow-xl shadow-[#F2B006]/20 flex items-center justify-center gap-2 transition-all"
         >
           <Ticket className="w-4 h-4" />
           <span>Go to My Registrations</span>
@@ -93,7 +93,7 @@ export default function RegistrationSuccess() {
 
         <Link
           to="/events"
-          className="w-full sm:w-auto px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-white dark:bg-[#20212A] text-slate-800 dark:text-white border border-slate-200 dark:border-white/10 hover:border-[#8055FF] flex items-center justify-center gap-2"
+          className="w-full sm:w-auto px-7 py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider bg-white dark:bg-[#2C3C55] text-slate-800 dark:text-white border border-slate-200 dark:border-[#455A76] hover:border-[#F2B006] flex items-center justify-center gap-2 transition-all"
         >
           <Compass className="w-4 h-4" />
           <span>Explore More Events</span>

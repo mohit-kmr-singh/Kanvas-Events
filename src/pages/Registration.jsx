@@ -31,10 +31,7 @@ export default function Registration() {
   const [formData, setFormData] = useState(() => ({
     fullName: user ? user.name : '',
     email: user ? user.email : '',
-    phone: '',
-    ticketTier: 'General Admission',
-    specialRequests: '',
-    agreeTerms: false
+    phone: ''
   }));
 
   const [errors, setErrors] = useState({});
@@ -46,7 +43,7 @@ export default function Registration() {
       <div className="max-w-xl mx-auto px-4 py-24 text-center space-y-4">
         <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Event Not Found</h2>
         <p className="text-slate-500">The event you are attempting to register for does not exist.</p>
-        <Link to="/events" className="inline-flex px-6 py-3 rounded-xl bg-[#8055FF] text-white font-bold text-xs">
+        <Link to="/events" className="inline-flex px-6 py-3 rounded-xl bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] font-bold text-xs shadow-md">
           Browse Events
         </Link>
       </div>
@@ -82,10 +79,6 @@ export default function Registration() {
 
     const phoneErr = validatePhone(formData.phone);
     if (phoneErr) newErrors.phone = phoneErr;
-
-    if (!formData.agreeTerms) {
-      newErrors.agreeTerms = 'You must agree to the Terms & Conditions to complete registration.';
-    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -123,8 +116,8 @@ export default function Registration() {
         fullName: formData.fullName.trim(),
         email: formData.email.trim().toLowerCase(),
         phone: formData.phone.trim(),
-        ticketTier: formData.ticketTier,
-        specialRequests: formData.specialRequests.trim()
+        ticketTier: 'General Admission',
+        specialRequests: ''
       });
 
       addToast('Registration confirmed successfully!', 'success');
@@ -145,26 +138,26 @@ export default function Registration() {
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Breadcrumb Navigation */}
       <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 mb-8 flex-wrap">
-        <Link to="/" className="hover:text-[#8055FF] transition-colors">
+        <Link to="/" className="hover:text-[#D79005] dark:hover:text-[#F8D237] transition-colors">
           Home
         </Link>
         <ChevronRight className="w-3.5 h-3.5" />
-        <Link to="/events" className="hover:text-[#8055FF] transition-colors">
+        <Link to="/events" className="hover:text-[#D79005] dark:hover:text-[#F8D237] transition-colors">
           Events
         </Link>
         <ChevronRight className="w-3.5 h-3.5" />
-        <Link to={`/events/${event.id}`} className="hover:text-[#8055FF] transition-colors max-w-[180px] truncate">
+        <Link to={`/events/${event.id}`} className="hover:text-[#D79005] dark:hover:text-[#F8D237] transition-colors max-w-[180px] truncate">
           {event.title}
         </Link>
         <ChevronRight className="w-3.5 h-3.5" />
-        <span className="text-[#8055FF] font-bold">Register</span>
+        <span className="text-[#D79005] dark:text-[#F8D237] font-bold">Register</span>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         {/* Left Column (7 cols): Registration Form */}
         <div className="lg:col-span-7 space-y-6">
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#8055FF]">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#D79005] dark:text-[#F8D237]">
               <Ticket className="w-4 h-4" />
               <span>Attendee Registration</span>
             </div>
@@ -201,7 +194,7 @@ export default function Registration() {
           <form
             onSubmit={handleSubmit}
             noValidate
-            className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 shadow-xl space-y-6"
+            className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] shadow-xl space-y-6"
           >
             {/* Full Name */}
             <div className="space-y-1.5">
@@ -217,11 +210,11 @@ export default function Registration() {
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleChange}
-                  placeholder="e.g. Alex Morgan"
-                  className={`w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-[#171822] text-slate-900 dark:text-white text-sm border focus:outline-none focus:ring-2 transition-all ${
+                  placeholder="e.g. Mohit Kumar"
+                  className={`w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-[#1E2B3E] text-slate-900 dark:text-white text-sm border focus:outline-none focus:ring-2 transition-all ${
                     errors.fullName
                       ? 'border-rose-500 focus:ring-rose-500/20'
-                      : 'border-slate-200 dark:border-white/10 focus:border-[#8055FF] focus:ring-[#8055FF]/20'
+                      : 'border-slate-200 dark:border-[#455A76] focus:border-[#F2B006] focus:ring-[#F2B006]/20'
                   }`}
                 />
               </div>
@@ -244,11 +237,11 @@ export default function Registration() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="e.g. alex@example.com"
-                  className={`w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-[#171822] text-slate-900 dark:text-white text-sm border focus:outline-none focus:ring-2 transition-all ${
+                  placeholder="e.g. mohit@example.com"
+                  className={`w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-[#1E2B3E] text-slate-900 dark:text-white text-sm border focus:outline-none focus:ring-2 transition-all ${
                     errors.email
                       ? 'border-rose-500 focus:ring-rose-500/20'
-                      : 'border-slate-200 dark:border-white/10 focus:border-[#8055FF] focus:ring-[#8055FF]/20'
+                      : 'border-slate-200 dark:border-[#455A76] focus:border-[#F2B006] focus:ring-[#F2B006]/20'
                   }`}
                 />
               </div>
@@ -275,11 +268,11 @@ export default function Registration() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="e.g. +1 555-019-2834"
-                  className={`w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-[#171822] text-slate-900 dark:text-white text-sm border focus:outline-none focus:ring-2 transition-all ${
+                  placeholder="e.g. 1234567890"
+                  className={`w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-[#1E2B3E] text-slate-900 dark:text-white text-sm border focus:outline-none focus:ring-2 transition-all ${
                     errors.phone
                       ? 'border-rose-500 focus:ring-rose-500/20'
-                      : 'border-slate-200 dark:border-white/10 focus:border-[#8055FF] focus:ring-[#8055FF]/20'
+                      : 'border-slate-200 dark:border-[#455A76] focus:border-[#F2B006] focus:ring-[#F2B006]/20'
                   }`}
                 />
               </div>
@@ -288,78 +281,13 @@ export default function Registration() {
               )}
             </div>
 
-            {/* Ticket Tier */}
-            <div className="space-y-2">
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
-                Pass Tier Selection
-              </label>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {['General Admission', 'VIP Access Pass', 'Early Supporter'].map((tier) => (
-                  <label
-                    key={tier}
-                    className={`flex flex-col p-3.5 rounded-xl border cursor-pointer transition-all ${
-                      formData.ticketTier === tier
-                        ? 'border-[#8055FF] bg-purple-500/10 text-slate-900 dark:text-white font-bold ring-1 ring-[#8055FF]'
-                        : 'border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#171822] text-slate-600 dark:text-slate-400 hover:border-slate-300'
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      name="ticketTier"
-                      value={tier}
-                      checked={formData.ticketTier === tier}
-                      onChange={handleChange}
-                      className="sr-only"
-                    />
-                    <span className="text-xs font-bold leading-tight">{tier}</span>
-                    <span className="text-[10px] text-slate-400 mt-1">Included with entry</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            {/* Special Requests / Notes */}
-            <div className="space-y-1.5">
-              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
-                Special Requests or Dietary / Accessibility Notes (Optional)
-              </label>
-              <textarea
-                name="specialRequests"
-                value={formData.specialRequests}
-                onChange={handleChange}
-                rows={2}
-                placeholder="Wheelchair seating, dietary preferences, or specific breakout topic interests..."
-                className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#171822] text-slate-900 dark:text-white text-sm border border-slate-200 dark:border-white/10 focus:outline-none focus:border-[#8055FF] focus:ring-2 focus:ring-[#8055FF]/20 transition-all resize-none"
-              />
-            </div>
-
-            {/* Terms & Conditions Checkbox */}
-            <div className="space-y-1 pt-2">
-              <label className="flex items-start gap-3 cursor-pointer">
-                <input
-                  type="checkbox"
-                  name="agreeTerms"
-                  checked={formData.agreeTerms}
-                  onChange={handleChange}
-                  className="w-4 h-4 mt-0.5 rounded text-[#8055FF] focus:ring-[#8055FF] accent-[#8055FF] cursor-pointer"
-                />
-                <span className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                  I agree to the Kanvas Events{' '}
-                  <span className="text-[#8055FF] font-semibold underline">Attendee Code of Conduct</span> and acknowledge that my registration will be recorded securely in local storage.
-                </span>
-              </label>
-              {errors.agreeTerms && (
-                <p className="text-xs text-rose-500 font-semibold">{errors.agreeTerms}</p>
-              )}
-            </div>
-
             {/* Submit Button */}
             <button
               type="submit"
               disabled={submitting}
-              className="w-full py-4 rounded-2xl font-bold text-sm bg-gradient-to-r from-[#8055FF] to-purple-600 hover:from-[#6c40f5] hover:to-purple-700 text-white shadow-xl shadow-[#8055FF]/30 hover:shadow-2xl hover:shadow-[#8055FF]/40 transition-all flex items-center justify-center gap-2 group cursor-pointer disabled:opacity-50"
+              className="w-full py-4 rounded-2xl font-bold text-sm bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] shadow-xl shadow-[#F2B006]/25 hover:shadow-2xl hover:shadow-[#F2B006]/35 transition-all flex items-center justify-center gap-2 group cursor-pointer disabled:opacity-50"
             >
-              <Lock className="w-4 h-4 text-purple-200" />
+              <Lock className="w-4 h-4 text-[#121B28]/70" />
               <span>{submitting ? 'Confirming Registration...' : 'Complete & Generate Digital Pass'}</span>
             </button>
 
@@ -372,8 +300,8 @@ export default function Registration() {
 
         {/* Right Column (5 cols): Selected Event Summary Card */}
         <div className="lg:col-span-5 sticky top-28 space-y-6">
-          <div className="p-6 rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 shadow-xl space-y-5">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#8055FF]">
+          <div className="p-6 rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] shadow-xl space-y-5">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#D79005] dark:text-[#F8D237]">
               Selected Event Summary
             </span>
 
@@ -387,7 +315,7 @@ export default function Registration() {
               <span className="absolute top-3 left-3 px-2.5 py-1 rounded-lg text-xs font-extrabold uppercase bg-black/60 text-white backdrop-blur-md">
                 {event.category}
               </span>
-              <span className="absolute bottom-3 right-3 px-3 py-1 rounded-full text-xs font-bold bg-[#8055FF] text-white">
+              <span className="absolute bottom-3 right-3 px-3 py-1 rounded-full text-xs font-bold bg-[#F2B006] text-[#121B28]">
                 {event.price}
               </span>
             </div>
@@ -402,21 +330,21 @@ export default function Registration() {
             </div>
 
             {/* Event Key Meta Items */}
-            <div className="space-y-3 pt-3 border-t border-slate-100 dark:border-white/10 text-xs">
+            <div className="space-y-3 pt-3 border-t border-slate-100 dark:border-[#455A76]/50 text-xs">
               <div className="flex items-center gap-2.5 text-slate-700 dark:text-slate-300">
-                <Calendar className="w-4 h-4 text-[#8055FF] shrink-0" />
+                <Calendar className="w-4 h-4 text-[#D79005] dark:text-[#F8D237] shrink-0" />
                 <span>
                   <strong>Date:</strong> {event.date}
                 </span>
               </div>
               <div className="flex items-center gap-2.5 text-slate-700 dark:text-slate-300">
-                <Clock className="w-4 h-4 text-[#8055FF] shrink-0" />
+                <Clock className="w-4 h-4 text-[#D79005] dark:text-[#F8D237] shrink-0" />
                 <span>
                   <strong>Time:</strong> {event.time}
                 </span>
               </div>
               <div className="flex items-center gap-2.5 text-slate-700 dark:text-slate-300">
-                <MapPin className="w-4 h-4 text-[#8055FF] shrink-0" />
+                <MapPin className="w-4 h-4 text-[#D79005] dark:text-[#F8D237] shrink-0" />
                 <span>
                   <strong>Venue:</strong> {event.venue}, {event.city}
                 </span>

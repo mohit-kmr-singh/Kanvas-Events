@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Ticket, 
@@ -16,7 +16,7 @@ import TicketPass from '../components/TicketPass';
 import { useToast } from '../context/ToastContext';
 
 export default function MyRegistrations() {
-  const [registrations, setRegistrations] = useState([]);
+  const [registrations, setRegistrations] = useState(() => getSavedRegistrations());
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTicket, setSelectedTicket] = useState(null); // For full ticket modal
   const [confirmCancelId, setConfirmCancelId] = useState(null); // ID of registration to cancel
@@ -26,10 +26,6 @@ export default function MyRegistrations() {
     const list = getSavedRegistrations();
     setRegistrations(list);
   };
-
-  useEffect(() => {
-    loadRegistrations();
-  }, []);
 
   const handleCancel = (id) => {
     const success = cancelRegistration(id);
@@ -62,7 +58,7 @@ export default function MyRegistrations() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div className="space-y-2">
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#8055FF]">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#D79005] dark:text-[#F8D237]">
             <Ticket className="w-4 h-4" />
             <span>Attendee Dashboard</span>
           </div>
@@ -76,7 +72,7 @@ export default function MyRegistrations() {
 
         {registrations.length > 0 && (
           <div className="flex items-center gap-3">
-            <span className="px-4 py-2 rounded-xl bg-purple-500/10 text-[#8055FF] dark:text-purple-300 font-bold text-xs border border-purple-500/20">
+            <span className="px-4 py-2 rounded-xl bg-[#F2B006]/15 text-[#D79005] dark:text-[#F8D237] font-bold text-xs border border-[#F2B006]/30">
               {registrations.length} Active {registrations.length === 1 ? 'Pass' : 'Passes'}
             </span>
           </div>
@@ -86,8 +82,8 @@ export default function MyRegistrations() {
       {/* Main Body */}
       {registrations.length === 0 ? (
         /* Empty State */
-        <div className="p-12 sm:p-20 text-center rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 shadow-xl space-y-5 max-w-lg mx-auto">
-          <div className="w-16 h-16 rounded-2xl bg-purple-500/10 text-[#8055FF] mx-auto flex items-center justify-center">
+        <div className="p-12 sm:p-20 text-center rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] shadow-xl space-y-5 max-w-lg mx-auto">
+          <div className="w-16 h-16 rounded-2xl bg-[#F2B006]/15 text-[#D79005] dark:text-[#F8D237] mx-auto flex items-center justify-center">
             <Ticket className="w-8 h-8" />
           </div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -98,7 +94,7 @@ export default function MyRegistrations() {
           </p>
           <Link
             to="/events"
-            className="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-[#8055FF] hover:bg-[#6c40f5] text-white font-bold text-xs uppercase tracking-wider shadow-lg shadow-[#8055FF]/25 transition-all"
+            className="inline-flex items-center gap-2 px-7 py-3 rounded-xl bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] font-bold text-xs uppercase tracking-wider shadow-lg shadow-[#F2B006]/20 transition-all"
           >
             <Compass className="w-4 h-4" />
             <span>Discover Events</span>
@@ -116,7 +112,7 @@ export default function MyRegistrations() {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder="Filter by event name, city, or ID..."
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white dark:bg-[#20212A] text-slate-800 dark:text-white placeholder-slate-400 text-xs font-medium border border-slate-200 dark:border-white/10 focus:outline-none focus:border-[#8055FF]"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white dark:bg-[#2C3C55] text-slate-800 dark:text-white placeholder-slate-400 text-xs font-medium border border-slate-200 dark:border-[#455A76] focus:outline-none focus:border-[#F2B006]"
                 />
               </div>
             </div>
@@ -127,7 +123,7 @@ export default function MyRegistrations() {
             {filtered.map((item) => (
               <div
                 key={item.id}
-                className="group relative flex flex-col rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 hover:border-[#8055FF]/50 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="group relative flex flex-col rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] hover:border-[#F2B006]/50 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 {/* Image Top */}
                 <div className="relative aspect-[16/9] overflow-hidden bg-slate-900">
@@ -151,31 +147,31 @@ export default function MyRegistrations() {
                 {/* Card Body */}
                 <div className="flex-1 p-5 flex flex-col justify-between space-y-4">
                   <div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#8055FF] dark:text-purple-300">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#D79005] dark:text-[#F8D237]">
                       {item.eventCategory} • {item.ticketTier}
                     </span>
-                    <h3 className="font-bold text-base text-slate-900 dark:text-white line-clamp-1 mt-1 group-hover:text-[#8055FF] transition-colors">
+                    <h3 className="font-bold text-base text-slate-900 dark:text-white line-clamp-1 mt-1 group-hover:text-[#D79005] dark:group-hover:text-[#F8D237] transition-colors">
                       {item.eventTitle}
                     </h3>
 
                     <div className="space-y-1.5 text-xs text-slate-500 dark:text-slate-400 mt-3">
                       <div className="flex items-center gap-1.5">
-                        <Calendar className="w-3.5 h-3.5 text-[#8055FF]" />
+                        <Calendar className="w-3.5 h-3.5 text-[#D79005] dark:text-[#F8D237]" />
                         <span>{item.eventDate} ({item.eventTime})</span>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <MapPin className="w-3.5 h-3.5 text-[#8055FF]" />
+                        <MapPin className="w-3.5 h-3.5 text-[#D79005] dark:text-[#F8D237]" />
                         <span className="truncate">{item.eventVenue}, {item.eventCity}</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Card Bottom Actions */}
-                  <div className="pt-3 border-t border-slate-100 dark:border-white/10 flex items-center justify-between gap-2">
+                  <div className="pt-3 border-t border-slate-100 dark:border-[#455A76]/50 flex items-center justify-between gap-2">
                     <button
                       onClick={() => setSelectedTicket(item)}
                       type="button"
-                      className="flex-1 py-2 px-3 rounded-xl text-xs font-bold bg-[#8055FF] hover:bg-[#6c40f5] text-white flex items-center justify-center gap-1.5 shadow-md shadow-[#8055FF]/20 transition-all"
+                      className="flex-1 py-2 px-3 rounded-xl text-xs font-bold bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] flex items-center justify-center gap-1.5 shadow-md shadow-[#F2B006]/20 transition-all"
                     >
                       <Eye className="w-3.5 h-3.5" />
                       <span>View QR Pass</span>
@@ -202,7 +198,7 @@ export default function MyRegistrations() {
       {/* ======================================================== */}
       {selectedTicket && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="relative w-full max-w-2xl max-h-[92vh] overflow-y-auto rounded-3xl bg-slate-50 dark:bg-[#101116] p-4 sm:p-6 border border-slate-200 dark:border-white/20 shadow-2xl">
+          <div className="relative w-full max-w-2xl max-h-[92vh] overflow-y-auto rounded-3xl bg-[#FDFBF7] dark:bg-[#121B28] p-4 sm:p-6 border border-slate-200 dark:border-[#455A76] shadow-2xl">
             <button
               onClick={() => setSelectedTicket(null)}
               className="absolute top-4 right-4 p-2 rounded-full bg-slate-200 dark:bg-white/10 text-slate-700 dark:text-white hover:bg-slate-300 dark:hover:bg-white/20 transition-colors z-20 no-print"
@@ -221,7 +217,7 @@ export default function MyRegistrations() {
       {/* ======================================================== */}
       {confirmCancelId && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="w-full max-w-md p-6 rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 shadow-2xl space-y-4">
+          <div className="w-full max-w-md p-6 rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] shadow-2xl space-y-4">
             <div className="w-12 h-12 rounded-2xl bg-rose-500/10 text-rose-500 flex items-center justify-center">
               <AlertTriangle className="w-6 h-6" />
             </div>

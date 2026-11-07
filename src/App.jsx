@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { ToastProvider } from './context/ToastContext';
 import { WishlistProvider } from './context/WishlistContext';
@@ -13,7 +13,6 @@ import EventDetails from './pages/EventDetails';
 import Registration from './pages/Registration';
 import RegistrationSuccess from './pages/RegistrationSuccess';
 import MyRegistrations from './pages/MyRegistrations';
-import About from './pages/About';
 import Contact from './pages/Contact';
 import Wishlist from './pages/Wishlist';
 import CalendarView from './pages/CalendarView';
@@ -28,7 +27,7 @@ export default function App() {
         <WishlistProvider>
           <AuthProvider>
             <BrowserRouter>
-              <div className="flex flex-col min-h-screen bg-slate-50 text-slate-900 dark:bg-[#101116] dark:text-[#F4F2EE] transition-colors duration-300">
+              <div className="flex flex-col min-h-screen bg-[#FDFBF7] text-[#121B28] dark:bg-[#121B28] dark:text-[#F4F2EE] transition-colors duration-300">
                 <Navbar />
                 <main className="flex-grow">
                   <Routes>
@@ -38,7 +37,7 @@ export default function App() {
                     <Route path="/events/:id/register" element={<Registration />} />
                     <Route path="/registration-success" element={<RegistrationSuccess />} />
                     <Route path="/my-registrations" element={<MyRegistrations />} />
-                    <Route path="/about" element={<About />} />
+                    <Route path="/about" element={<Navigate to="/" replace />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/wishlist" element={<Wishlist />} />
                     <Route path="/calendar" element={<CalendarView />} />

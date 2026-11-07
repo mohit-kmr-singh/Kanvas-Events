@@ -34,18 +34,18 @@ export function ToastProvider({ children }) {
                 ? 'bg-white dark:bg-[#15231c]/95 border-emerald-500/40 text-emerald-900 dark:text-emerald-200'
                 : toast.type === 'error'
                 ? 'bg-white dark:bg-[#291518]/95 border-rose-500/40 text-rose-900 dark:text-rose-200'
-                : 'bg-white dark:bg-[#1e1a38]/95 border-[#8055FF]/40 text-purple-900 dark:text-purple-200'
+                : 'bg-white dark:bg-[#2C3C55] border-[#F2B006]/50 text-[#121B28] dark:text-[#F8D237]'
             }`}
           >
             <div className="flex items-center gap-3">
               {toast.type === 'success' && <CheckCircle2 className="w-5 h-5 text-emerald-500 dark:text-emerald-400 shrink-0" />}
               {toast.type === 'error' && <AlertCircle className="w-5 h-5 text-rose-500 dark:text-rose-400 shrink-0" />}
-              {toast.type === 'info' && <Info className="w-5 h-5 text-[#8055FF] shrink-0" />}
-              <span className="text-sm font-medium leading-relaxed">{toast.message}</span>
+              {toast.type === 'info' && <Info className="w-5 h-5 text-[#F2B006] shrink-0" />}
+              <span className="text-sm font-semibold leading-relaxed">{toast.message}</span>
             </div>
             <button
               onClick={() => removeToast(toast.id)}
-              className="p-1 rounded-lg hover:bg-slate-100 dark:hover:bg-white/10 text-slate-400 dark:text-white/60 hover:text-slate-800 dark:hover:text-white transition-colors"
+              className="p-1 rounded-lg hover:bg-slate-100 dark:hover:bg-[#394D6A] text-slate-400 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors cursor-pointer"
               aria-label="Dismiss notification"
             >
               <X className="w-4 h-4" />

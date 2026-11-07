@@ -70,7 +70,7 @@ export default function CalendarView() {
     <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-8">
       {/* Header */}
       <div className="space-y-2">
-        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#8055FF]">
+        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#D79005] dark:text-[#F8D237]">
           <CalendarRange className="w-4 h-4" />
           <span>Interactive Schedule</span>
         </div>
@@ -84,23 +84,23 @@ export default function CalendarView() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Calendar Widget (7 cols) */}
-        <div className="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 shadow-xl space-y-6">
+        <div className="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] shadow-xl space-y-6">
           {/* Calendar Month Navigation */}
-          <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-white/10">
+          <div className="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-[#455A76]/50">
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white font-['Outfit']">
               {monthNames[currentMonth]} {currentYear}
             </h2>
             <div className="flex items-center gap-2">
               <button
                 onClick={handlePrevMonth}
-                className="p-2 rounded-xl border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors"
+                className="p-2 rounded-xl border border-slate-200 dark:border-[#455A76] hover:bg-slate-100 dark:hover:bg-[#394D6A] transition-colors"
                 aria-label="Previous Month"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
               <button
                 onClick={handleNextMonth}
-                className="p-2 rounded-xl border border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10 transition-colors"
+                className="p-2 rounded-xl border border-slate-200 dark:border-[#455A76] hover:bg-slate-100 dark:hover:bg-[#394D6A] transition-colors"
                 aria-label="Next Month"
               >
                 <ChevronRight className="w-4 h-4" />
@@ -147,9 +147,9 @@ export default function CalendarView() {
                   type="button"
                   className={`aspect-square relative rounded-2xl flex flex-col items-center justify-center p-1 sm:p-2 transition-all font-medium text-xs sm:text-sm ${
                     isSelected
-                      ? 'bg-[#8055FF] text-white shadow-lg shadow-[#8055FF]/30 font-bold scale-105 z-10'
+                      ? 'bg-[#F2B006] text-[#121B28] shadow-lg shadow-[#F2B006]/30 font-bold scale-105 z-10'
                       : hasEvents
-                      ? 'bg-purple-500/10 dark:bg-purple-500/20 text-[#8055FF] dark:text-purple-300 font-bold hover:scale-105 border border-purple-500/30'
+                      ? 'bg-[#F2B006]/15 dark:bg-[#F2B006]/20 text-[#D79005] dark:text-[#F8D237] font-bold hover:scale-105 border border-[#F2B006]/35'
                       : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5'
                   }`}
                 >
@@ -160,7 +160,7 @@ export default function CalendarView() {
                         <span
                           key={idx}
                           className={`w-1.5 h-1.5 rounded-full ${
-                            isSelected ? 'bg-white' : 'bg-[#8055FF]'
+                            isSelected ? 'bg-[#121B28]' : 'bg-[#F2B006]'
                           }`}
                         />
                       ))}
@@ -172,15 +172,15 @@ export default function CalendarView() {
           </div>
 
           {/* Legend and Helper */}
-          <div className="pt-4 border-t border-slate-100 dark:border-white/10 flex items-center justify-between text-xs text-slate-500">
+          <div className="pt-4 border-t border-slate-100 dark:border-[#455A76]/50 flex items-center justify-between text-xs text-slate-500">
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#8055FF]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-[#F2B006]" />
               <span>Indicates scheduled event date</span>
             </div>
             {selectedDateStr && (
               <button
                 onClick={() => setSelectedDateStr(null)}
-                className="font-bold text-[#8055FF] hover:underline"
+                className="font-bold text-[#D79005] dark:text-[#F8D237] hover:underline"
               >
                 Show All Month
               </button>
@@ -200,7 +200,7 @@ export default function CalendarView() {
           </div>
 
           {displayedEvents.length === 0 ? (
-            <div className="p-8 text-center rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 shadow-sm space-y-2">
+            <div className="p-8 text-center rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] shadow-sm space-y-2">
               <Calendar className="w-8 h-8 text-slate-400 mx-auto" />
               <p className="text-sm font-semibold text-slate-700 dark:text-slate-300">
                 No events scheduled for this selection
@@ -214,10 +214,10 @@ export default function CalendarView() {
               {displayedEvents.map((event) => (
                 <div
                   key={event.id}
-                  className="p-5 rounded-2xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 shadow-md space-y-3 hover:border-[#8055FF]/50 transition-all"
+                  className="p-5 rounded-2xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] shadow-md space-y-3 hover:border-[#F2B006]/60 transition-all"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[#8055FF]/10 text-[#8055FF] dark:text-purple-300">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-[#F2B006]/15 text-[#D79005] dark:text-[#F8D237]">
                       {event.category}
                     </span>
                     <span className="text-xs font-bold text-slate-900 dark:text-white">
@@ -226,18 +226,18 @@ export default function CalendarView() {
                   </div>
 
                   <Link to={`/events/${event.id}`}>
-                    <h4 className="font-bold text-base text-slate-900 dark:text-white hover:text-[#8055FF] transition-colors leading-snug">
+                    <h4 className="font-bold text-base text-slate-900 dark:text-white hover:text-[#D79005] dark:hover:text-[#F8D237] transition-colors leading-snug">
                       {event.title}
                     </h4>
                   </Link>
 
                   <div className="space-y-1 text-xs text-slate-500 dark:text-slate-400">
                     <div className="flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-[#8055FF]" />
+                      <Clock className="w-3.5 h-3.5 text-[#D79005] dark:text-[#F8D237]" />
                       <span>{event.time}</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5 text-[#8055FF]" />
+                      <MapPin className="w-3.5 h-3.5 text-[#D79005] dark:text-[#F8D237]" />
                       <span>{event.venue}, {event.city}</span>
                     </div>
                   </div>
@@ -245,7 +245,7 @@ export default function CalendarView() {
                   <div className="pt-2 flex items-center justify-between">
                     <Link
                       to={`/events/${event.id}`}
-                      className="text-xs font-bold text-[#8055FF] dark:text-purple-300 hover:underline flex items-center gap-1"
+                      className="text-xs font-bold text-[#D79005] dark:text-[#F8D237] hover:underline flex items-center gap-1"
                     >
                       <span>View Details</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -253,7 +253,7 @@ export default function CalendarView() {
 
                     <Link
                       to={`/events/${event.id}/register`}
-                      className="px-3.5 py-1.5 rounded-xl bg-[#8055FF] text-white text-xs font-bold hover:bg-[#6c40f5] shadow-sm"
+                      className="px-3.5 py-1.5 rounded-xl bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] text-xs font-bold shadow-sm"
                     >
                       Register
                     </Link>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Sparkles, User, Mail, Lock, UserPlus } from 'lucide-react';
+import { User, Mail, Lock, UserPlus } from 'lucide-react';
 import { validateEmail, validateFullName } from '../utils/validation';
 import { useAuth } from '../context/AuthContext';
 
@@ -37,11 +37,13 @@ export default function Signup() {
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 p-8 rounded-3xl bg-white dark:bg-[#20212A] border border-slate-200 dark:border-white/10 shadow-2xl">
+      <div className="max-w-md w-full space-y-8 p-8 rounded-3xl bg-white dark:bg-[#2C3C55] border border-slate-200 dark:border-[#455A76] shadow-2xl">
         <div className="text-center space-y-2">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#8055FF] to-indigo-600 flex items-center justify-center mx-auto shadow-lg shadow-[#8055FF]/25">
-            <Sparkles className="w-6 h-6 text-white" />
-          </div>
+          <img
+            src="/logo.png"
+            alt="Kanvas Events Logo"
+            className="w-16 h-16 object-contain mx-auto drop-shadow-md"
+          />
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-['Outfit']">
             Create an Account
           </h2>
@@ -62,7 +64,7 @@ export default function Signup() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Jordan Smith"
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-[#171822] text-sm text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 focus:outline-none focus:border-[#8055FF]"
+                className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-[#1E2B3E] text-sm text-slate-900 dark:text-white border border-slate-200 dark:border-[#455A76] focus:outline-none focus:border-[#F2B006]"
                 required
               />
             </div>
@@ -80,7 +82,7 @@ export default function Signup() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="e.g. jordan@example.com"
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-[#171822] text-sm text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 focus:outline-none focus:border-[#8055FF]"
+                className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-[#1E2B3E] text-sm text-slate-900 dark:text-white border border-slate-200 dark:border-[#455A76] focus:outline-none focus:border-[#F2B006]"
                 required
               />
             </div>
@@ -98,7 +100,7 @@ export default function Signup() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="At least 6 characters"
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-[#171822] text-sm text-slate-900 dark:text-white border border-slate-200 dark:border-white/10 focus:outline-none focus:border-[#8055FF]"
+                className="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-[#1E2B3E] text-sm text-slate-900 dark:text-white border border-slate-200 dark:border-[#455A76] focus:outline-none focus:border-[#F2B006]"
                 required
               />
             </div>
@@ -107,7 +109,7 @@ export default function Signup() {
 
           <button
             type="submit"
-            className="w-full py-3.5 rounded-xl font-bold text-sm bg-[#8055FF] hover:bg-[#6c40f5] text-white shadow-xl shadow-[#8055FF]/30 transition-all flex items-center justify-center gap-2"
+            className="w-full py-3.5 rounded-xl font-bold text-sm bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] shadow-xl shadow-[#F2B006]/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
             <UserPlus className="w-4 h-4" />
             <span>Create Account</span>
@@ -116,7 +118,7 @@ export default function Signup() {
 
         <div className="text-center text-xs text-slate-500">
           <span>Already registered? </span>
-          <Link to="/login" className="text-[#8055FF] font-bold hover:underline">
+          <Link to="/login" className="text-[#D79005] dark:text-[#F8D237] font-bold hover:underline">
             Sign In here
           </Link>
         </div>

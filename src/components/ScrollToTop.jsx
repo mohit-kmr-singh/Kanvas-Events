@@ -30,10 +30,10 @@ export default function ScrollToTop() {
     <button
       onClick={scrollToTop}
       type="button"
-      className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-[#8055FF] text-white shadow-xl shadow-[#8055FF]/40 hover:bg-[#6c40f5] hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#8055FF] no-print"
+      className="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-[#F2B006] hover:bg-[#D79005] text-[#121B28] font-bold shadow-xl shadow-[#F2B006]/35 hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#F2B006] cursor-pointer no-print"
       aria-label="Scroll to top of page"
     >
-      <ArrowUp className="w-5 h-5" />
+      <ArrowUp className="w-5 h-5 stroke-[2.5]" />
     </button>
   );
 }
